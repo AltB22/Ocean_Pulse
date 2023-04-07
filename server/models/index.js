@@ -1,6 +1,4 @@
-// const Tech = require('./Tech');
-//const Matchup = require('./Matchup');
+const User = require('./user');
+const Locations = require('./locations');
 
-//module.exports = { Tech, Matchup };
-
-//We need to add our our models to replace Tech and Matchup
+module.exports = { User, Locations };
