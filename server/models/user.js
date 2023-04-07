@@ -10,7 +10,12 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    match: 
+    // match: regex here
+  },
+  password: {
+    type: String,
+    required: true,
+    unique: true,
   },
 });
 
