@@ -1,0 +1,42 @@
+[
+  {
+    "surf_spot": "Ocean Beach",
+    "location": "San Francisco, CA",
+		"type": "Beach - sand bottom with shifting peaks",
+		"optimal_swell_direction": "NW, W, SW",
+		"optimal_wind": "light to none - up to 10mph NE",
+		"optimal_swell_size":
+			"Waist high to double-overhead (note: can handle much bigger but becomes impossible to paddle out)",
+		"optimal_tide": "All-tides"
+  },
+  {
+    "name": "HTML"
+  },
+  {
+    "name": "CSS"
+  },
+  {
+    "name": "Node.js"
+  },
+  {
+    "name": "Express.js"
+  },
+  {
+    "name": "MySQL"
+  },
+  {
+    "name": "MongoDB"
+  },
+  {
+    "name": "React"
+  },
+  {
+    "name": "GraphQL"
+  },
+  {
+    "name": "Sequelize"
+  },
+  {
+    "name": "Handlebars.js"
+  }
+]
