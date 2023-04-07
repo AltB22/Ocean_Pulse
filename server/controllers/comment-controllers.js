@@ -1,4 +1,4 @@
-const { Post, Comment } = require("../models");
+const { Comment } = require("../models");
 
 module.exports = {
 	getComments(req, res) {
@@ -20,17 +20,17 @@ module.exports = {
 	createComment(req, res) {
 		Comment.create(req.body)
 			.then((comment) => {
-				return Post.findOneAndUpdate(
-					{ _id: req.body.postId },
+				return Location.findOneAndUpdate(
+					{ _id: req.body.locationId },
 					{ $push: { comments: comment._id } },
 					{ new: true }
 				);
 			})
-			.then((post) =>
-				!post
+			.then((location) =>
+				!location
 					? res
 							.status(404)
-							.json({ message: "comment created, but no posts with this ID" })
+							.json({ message: "comment created, but no location with this ID" })
 					: res.json({ message: "comment created" })
 			)
 			.catch((err) => {
