@@ -1,6 +1,11 @@
-const router = require('express').Router();
-const { getAllTech } = require('../../controllers/tech-controller');
+const router = require("express").Router();
+const {
+	getAllUsers,
+	createUser,
+	getUser
+} = require("../../controllers/user-controller");
 
-router.route('/').get(getAllTech);
-
-module.exports = router;
+router.route("/").get(getAllLocations);
+// router.route('/').post(createMatchup);
+router.route("/:id").get(getLocation);
+// router.route('/:id').put(createVote);
