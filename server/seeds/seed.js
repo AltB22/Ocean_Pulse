@@ -1,16 +1,27 @@
 const db = require('../config/connection');
-const { Locations } = require('../models');
+const { Location, User } = require('../models');
+const locationSeeds = require('./locationData.json')
+const userSeeds = require('./userData.json')
 
 const locationData = require('./locationData.json');
 
 db.once('open', async () => {
-  await Locations.deleteMany({});
+  try{
+    await Location.deleteMany({});
+    await User.deleteMany({});
+    await Location.create(locationSeeds);
+    await User.create(userSeeds);
 
-  const locations = await Locations.insertMany(locationData);
-  const users = await Users.insertMany(userData)
+    console.log('Users & Surf Locations Seeded!');
+    process.exit(0);
+  } catch (err) {
+    throw err;
+  }
 
-  console.log('Users & Surf Locations Seeded!');
-  process.exit(0);
 });
+
+//I don't think we need the below in db.once because of create() - Billy
+// const locations = await Location.insertMany(locationData);
+  // const users = await User.insertMany(userData);
 
 
