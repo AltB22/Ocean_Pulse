@@ -5,7 +5,7 @@ const {
 	getUser
 } = require("../../controllers/user-controller");
 
-router.route("/").get(getAllLocations);
+router.route("/").get(getAllUsers);
 // router.route('/').post(createMatchup);
-router.route("/:id").get(getLocation);
+router.route("/:id").get(getUSer);
 // router.route('/:id').put(createVote);
