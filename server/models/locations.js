@@ -9,6 +9,10 @@ const locationSchema = new Schema({
     type: String,
     required: true,
   },
+  type: {
+    type: String,
+    required: true,
+  },
   optimal_swell_direction: {
     type: Number,
     default: 0,
