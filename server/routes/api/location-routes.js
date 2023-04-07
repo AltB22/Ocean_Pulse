@@ -1,14 +1,11 @@
 const router = require('express').Router();
 const {
-  getAllMatchups,
-  createMatchup,
-  getMatchup,
-  createVote,
-} = require('../../controllers/matchup-controller');
+  getAllLocations,
+  getLocation,
+} = require('../../controllers/locations-controller');
 
-router.route('/').get(getAllMatchups);
-router.route('/').post(createMatchup);
-router.route('/:id').get(getMatchup);
-router.route('/:id').put(createVote);
+router.route('/').get(getAllLocations);
+router.route('/:id').get(getLocation);
+
 
 module.exports = router;
