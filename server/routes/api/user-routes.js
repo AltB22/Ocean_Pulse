@@ -1,11 +1,10 @@
-const router = require("express").Router();
-const {
-	getAllUsers,
-	createUser,
-	getUser
-} = require("../../controllers/user-controller");
+// const router = require("express").Router();
+// const {
+// 	createUser,
+// 	getUser
+// } = require("../../controllers/user-controller");
 
-router.route("/").get(getAllUsers);
-// router.route('/').post(createMatchup);
-router.route("/:id").get(getUSer);
-// router.route('/:id').put(createVote);
+// router.route("/").get(getUsers);
+// // router.route('/').post(createMatchup);
+// router.route("/:id").get(createUser);
+// // router.route('/:id').put(createVote);
