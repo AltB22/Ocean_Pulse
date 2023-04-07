@@ -29,6 +29,11 @@ const locationSchema = new Schema({
     type: String,
     default: 0,
   },
+  summary: {
+    type: String,
+    default: 0,
+  },
+
 
 });
 
