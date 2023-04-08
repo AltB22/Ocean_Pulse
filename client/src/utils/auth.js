@@ -1,4 +1,4 @@
-import decode from "jwt-decode";
+const decode = require("jwt-decode");
 
 class AuthService {
     //Finds user with the decoded JWT token for the local storage
@@ -37,4 +37,4 @@ class AuthService {
 	}
 }
 
-export default new AuthService();
+module.exports = new AuthService();

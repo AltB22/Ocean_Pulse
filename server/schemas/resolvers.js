@@ -8,15 +8,18 @@ const resolvers = {
 		user: async () => {
 			return User.find();
 		},
-		user: async (parent, { userId }) => {
-			return User.findOne({ _id: userId });
-		},
+		// user: async (parent, { userId }) => {//commented this out for now until we can sort it out. - Billy
+		// 	return User.findOne({ _id: userId });
+		// },
 		me: async (parent, args, context) => {
 			if (context.user) {
-				return User.findOne({ _id: context.user._id });
+				return User.findOne({ _id: context.user._id });//we may need to adjust this to context.userId - Billy
 			}
 			throw new AuthenticationError("You need to be logged in!");
 		},
+		user: async (parent, { username }) => { // Added this resolver for the new 'user' field - Billy
+			return User.findOne({ username });
+		  }
 	},
 
 	//Defines the Mutations
@@ -57,7 +60,7 @@ const resolvers = {
 			if (context.user) {
 				const location = await Location.create({
 					...args,
-					user: context.user._id,
+					user: context.user._id,//we may need to adjust this to context.userId - Billy
 				});
 				return location;
 			}
@@ -66,14 +69,14 @@ const resolvers = {
 
 		removeUser: async (parent, args, context) => {
 			if (context.user) {
-				return User.findOneAndDelete({ _id: context.user._id });
+				return User.findOneAndDelete({ _id: context.user._id });//we may need to adjust this to context.userId - Billy
 			}
 			throw new AuthenticationError("You need to be logged in!");
 		},
 		removeComment: async (parent, { comment }, context) => {
 			if (context.user) {
 				return Location.findOneAndUpdate(
-					{ _id: context.location._id },
+					{ _id: context.location._id },//we may need to adjust this to context.locationId - Billy
 					{ $pull: { comments: comment } },
 					{ new: true }
 				);
