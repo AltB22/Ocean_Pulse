@@ -4,7 +4,7 @@ const { Schema, model } = require("mongoose");
 const commentSchema = new Schema({
     comment: {
 	type: String,
-	username: User,
+	// username: User,
     //must reference the user.
     },
 });
