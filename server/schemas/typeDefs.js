@@ -4,7 +4,7 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
 	type User {
 		_id: ID
-		name: String
+		username: String
 		email: String
 		password: String
 	}
@@ -15,8 +15,8 @@ const typeDefs = gql`
 	}
 
 	type Query {
-		user: [User]!
-		user(userId: ID!): User
+		username: [User]!
+		username(userId: ID!): User
 		me: User
 	}
      type Comment {
@@ -26,18 +26,18 @@ const typeDefs = gql`
 
   type Location {
     _id: ID
-    surfSpot: String
+    surf_spot: String
     location: String
     type: String
-    optimalSwellDirection: Int
+    optimal_swell_direction: Int
     optimal_wind: Int
-    optimalSwellSize: Int
-    optimalTide: String
+    optimal_swell_size: Int
+    optimal_tide: String
     comments: [Comment]
   }
 
 	type Mutation {
-		addUser(name: String!, email: String!, password: String!): Auth
+		addUser(username: String!, email: String!, password: String!): Auth
 
 		login(email: String!, password: String!): Auth
 
@@ -47,9 +47,9 @@ const typeDefs = gql`
 
         removeUser: User
 
-        removeComment(comment:Sting!):Location
+        removeComment(comment:String!):Location
 
-		addLocation(surfSpot: String!, location: String!, type: String!, optimalSwellDirection: Number!, optimal_wind: Number!, optimalSwellSize: Number!, optimalTide: Sting!)
+		addLocation(surf_spot: String!, location: String!, type: String!, optimal_swell_direction: Number!, optimal_wind: Number!, optimal_swell_size: Number!, optimal_tide: String!)
 	}
 `;
 
