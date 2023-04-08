@@ -14,15 +14,15 @@ const locationSchema = new Schema({
     required: true,
   },
   optimal_swell_direction: {
-    type: Number,
+    type: String,
     default: 0,
   },
   optimal_wind: {
-    type: Number,
+    type: String,
     default: 0,
   },
   optimal_swell_size: {
-    type: Number,
+    type: String,
     default: 0,
   },
   optimal_tide: {
