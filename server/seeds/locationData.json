@@ -157,6 +157,7 @@
 		"optimal_wind": "none or E",
 		"optimal_swell_size": "Waist high to double overhead",
 		"optimal_tide": "Low to Mid",
+    "summary": ""
 	},
 	{
 		"surf_spot": "Pleasure Point",
@@ -166,6 +167,7 @@
 		"optimal_wind": "NE, N, NW, or none",
 		"optimal_swell_size": "Chest high to double overhead",
 		"optimal_tide": "All - best on mid incoming",
+    "summary": ""
 	},
 	{
 		"surf_spot": "Steamer Lane",
@@ -175,6 +177,7 @@
 		"optimal_wind": "NE, N, NW or none",
 		"optimal_swell_size": "Waist high to double overhead",
 		"optimal_tide": "Low to Mid",
+    "summary": ""
 	},
 	{
 		"surf_spot": "Ventura Point",
@@ -184,6 +187,7 @@
 		"optimal_wind": "E",
 		"optimal_swell_size": "Overhead to triple overhead",
 		"optimal_tide": "Low",
+    "summary": ""
 	},
 	{
 		"surf_spot": "Pacifica / Linda Mar Beach",
@@ -193,6 +197,7 @@
 		"optimal_wind": "E",
 		"optimal_swell_size": "Waist high to overhead",
 		"optimal_tide": "Mid to high",
+    "summary": ""
 	},
   {
     "name": "Handlebars.js"
