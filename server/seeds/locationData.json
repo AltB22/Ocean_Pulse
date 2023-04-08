@@ -196,6 +196,7 @@
 		"optimal_swell_direction": "W, NW, WNW",
 		"optimal_wind": "E",
 		"optimal_swell_size": "Waist high to overhead",
-		"optimal_tide": "Mid to high"
+		"optimal_tide": "Mid to high",
+    "summary": ""
 	}
 ]
