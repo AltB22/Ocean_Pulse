@@ -1,32 +1,56 @@
 const { gql } = require("apollo-server-express");
 
-//add the typeDefs for below.
-//const tyoeDefts - gql
+//Defining the typeDefs in GraphQL schema
+const typeDefs = gql`
+	type User {
+		_id: ID
+		name: String
+		email: String
+		password: String
+	}
 
-//module.exports = typeDefs;
+	type Auth {
+		token: ID!
+		user: User
+	}
 
-//exmpales on how to write typeDefs
-// const typeDefs = gql`
-// 	type Tech {
-// 		_id: ID!
-// 		name: String!
-// 	}
+	type Query {
+		user: [User]!
+		user(userId: ID!): User
+		me: User
+	}
+     type Comment {
+    _id: ID
+    comment: String
+  }
 
-// 	type Matchup {
-// 		_id: ID!
-// 		tech1: String!
-// 		tech2: String!
-// 		tech1_votes: Int
-// 		tech2_votes: Int
-// 	}
+  type Location {
+    _id: ID
+    surfSpot: String
+    location: String
+    type: String
+    optimalSwellDirection: Int
+    optimal_wind: Int
+    optimalSwellSize: Int
+    optimalTide: String
+    comments: [Comment]
+  }
 
-// 	type Query {
-// 		tech: [Tech]
-// 		matchups(_id: String): [Matchup]
-// 	}
+	type Mutation {
+		addUser(name: String!, email: String!, password: String!): Auth
 
-// 	type Mutation {
-// 		createMatchup(tech1: String!, tech2: String!): Matchup
-// 		createVote(_id: String!, techNum: Int!): Matchup
-// 	}
-// `;
+		login(email: String!, password: String!): Auth
+
+        addComment(
+            userId: ID!, comment: String!
+        ):Location
+
+        removeUser: User
+
+        removeComment(comment:Sting!):Location
+
+		addLocation(surfSpot: String!, location: String!, type: String!, optimalSwellDirection: Number!, optimal_wind: Number!, optimalSwellSize: Number!, optimalTide: Sting!)
+	}
+`;
+
+module.exports = typeDefs;
