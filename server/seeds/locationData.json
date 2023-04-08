@@ -16,7 +16,8 @@
     "optimal_swell_direction": "NW, W, SW",
     "optimal_wind": "light to none - up to 10mph NE",
     "optimal_swell_size": "Minimum size triple overhead.  Can handle and routinely sees days up to 5-6x overhead",
-    "optimal_tide": "Low to Mid"
+    "optimal_tide": "Low to Mid",
+    "summary": ""
   },
   {
     "surf_spot": "Malibu",
@@ -25,7 +26,8 @@
     "optimal_swell_direction": "S, SW, WSW",
     "optimal_wind": "N, NW",
     "optimal_swell_size": "Waist High to Double Overhead",
-    "optimal_tide": "Mid"
+    "optimal_tide": "Mid",
+    "summary": ""
   },
   {
     "surf_spot": "The Wedge",
@@ -34,7 +36,8 @@
     "optimal_swell_direction": "SW, SSW, S, SSE",
     "optimal_wind": "NE, E, SE",
     "optimal_swell_size": "Double overhead to 5x overhead",
-    "optimal_tide": "Low to Mid"
+    "optimal_tide": "Low to Mid",
+    "summary": ""
   },
   {
     "surf_spot": "Pismo Beach Pier",
@@ -43,7 +46,8 @@
     "optimal_swell_direction": "Shorter period W or NW or long period SW",
     "optimal_wind": "E, NE, or none",
     "optimal_swell_size": "Waist high to overhead",
-    "optimal_tide": "Low to Mid"
+    "optimal_tide": "Low to Mid",
+    "summary": ""
   },
   {
     "surf_spot": "Rincon",
@@ -52,7 +56,8 @@
 		"optimal_swell_direction": "W, WSW, WNW",
 		"optimal_wind": "N, NE",
 		"optimal_swell_size": "Head high to double overhead",
-		"optimal_tide": "Low"
+		"optimal_tide": "Low",
+    "summary": ""
   },
   {
     "surf_spot": "Huntington Beach Pier",
@@ -61,7 +66,8 @@
 		"optimal_swell_direction": "SSE, S, SW, WSW, W, WNW",
 		"optimal_wind": "NE Santa Anas",
 		"optimal_swell_size": "Shoulder hight to 3 ft. overhead",
-		"optimal_tide": "Mid"
+		"optimal_tide": "Mid",
+    "summary": ""
   },
   {
     "surf_spot": "San Onofre Beach",
@@ -70,7 +76,8 @@
 		"optimal_swell_direction": "NW, W, SW",
 		"optimal_wind": "NE or none",
 		"optimal_swell_size": "Waist high to overhead",
-		"optimal_tide": "Low to Mid"
+		"optimal_tide": "Low to Mid",
+    "summary": ""
   },
   {
     "surf_spot": "Asilomar Beach",
@@ -79,7 +86,8 @@
 		"optimal_swell_direction": "NW, W, SW, N",
 		"optimal_wind": "E, SE",
 		"optimal_swell_size": "Waist high - 2x overhead",
-		"optimal_tide": "Low to Mid"
+		"optimal_tide": "Low to Mid",
+    "summary": ""
   },
   {
     "surf_spot": "Cardiff Reef",
@@ -88,7 +96,8 @@
 		"optimal_swell_direction": "NW, W",
 		"optimal_wind": "light to none - E if any wind",
 		"optimal_swell_size": "Waist high to a few feet overhead",
-		"optimal_tide": "Low to Mid"
+		"optimal_tide": "Low to Mid",
+    "summary": ""
   },
   {
 		"surf_spot": "Oceanside Pier",
@@ -97,7 +106,8 @@
 		"optimal_swell_direction": "SSW, SW, W, WNW",
 		"optimal_wind": "E, NE",
 		"optimal_swell_size": "Shoulder high to 3 ft. overhead",
-		"optimal_tide": "Mid"
+		"optimal_tide": "Mid",
+    "summary": ""
 	},
 	{
 		"surf_spot": "Doheny Beach",
@@ -106,7 +116,8 @@
 		"optimal_swell_direction": "SSE, S, SW",
 		"optimal_wind": "NE",
 		"optimal_swell_size": "Waist to head high",
-		"optimal_tide": "Mid"
+		"optimal_tide": "Mid",
+    "summary": ""
 	},
   {
 		"surf_spot": "Lower Trestles",
@@ -115,7 +126,8 @@
 		"optimal_swell_direction": "S, SW",
 		"optimal_wind": "E, NE",
 		"optimal_swell_size": "Shoulder high to double overhead",
-		"optimal_tide": "Mid"
+		"optimal_tide": "Mid",
+    "summary": ""
 	},
 	{
 		"surf_spot": "Blacks Beach",
@@ -124,7 +136,8 @@
 		"optimal_swell_direction": "NW, W, SW",
 		"optimal_wind": "E, SE",
 		"optimal_swell_size": "chest high to 3x overhead",
-		"optimal_tide": "Low to Mid"
+		"optimal_tide": "Low to Mid",
+    "summary": ""
 	},
 	{
 		"surf_spot": "Windandsea Beach",
@@ -133,7 +146,8 @@
 		"optimal_swell_direction": "NW, WNW, SW, SSW,",
 		"optimal_wind": "E",
 		"optimal_swell_size": "Chest high to double overhead",
-		"optimal_tide": "All"
+		"optimal_tide": "All",
+    "summary": ""
 	},
 	{
 		"surf_spot": "Swamis",
@@ -142,7 +156,7 @@
 		"optimal_swell_direction": "W, NW",
 		"optimal_wind": "none or E",
 		"optimal_swell_size": "Waist high to double overhead",
-		"optimal_tide": "Low to Mid"
+		"optimal_tide": "Low to Mid",
 	},
 	{
 		"surf_spot": "Pleasure Point",
@@ -151,7 +165,7 @@
 		"optimal_swell_direction": "SSW, SW, W, WNW",
 		"optimal_wind": "NE, N, NW, or none",
 		"optimal_swell_size": "Chest high to double overhead",
-		"optimal_tide": "All - best on mid incoming"
+		"optimal_tide": "All - best on mid incoming",
 	},
 	{
 		"surf_spot": "Steamer Lane",
@@ -160,7 +174,7 @@
 		"optimal_swell_direction": "W, S, NW",
 		"optimal_wind": "NE, N, NW or none",
 		"optimal_swell_size": "Waist high to double overhead",
-		"optimal_tide": "Low to Mid"
+		"optimal_tide": "Low to Mid",
 	},
 	{
 		"surf_spot": "Ventura Point",
@@ -169,7 +183,7 @@
 		"optimal_swell_direction": "W, NW",
 		"optimal_wind": "E",
 		"optimal_swell_size": "Overhead to triple overhead",
-		"optimal_tide": "Low"
+		"optimal_tide": "Low",
 	},
 	{
 		"surf_spot": "Pacifica / Linda Mar Beach",
@@ -178,7 +192,7 @@
 		"optimal_swell_direction": "W, NW, WNW",
 		"optimal_wind": "E",
 		"optimal_swell_size": "Waist high to overhead",
-		"optimal_tide": "Mid to high"
+		"optimal_tide": "Mid to high",
 	},
   {
     "name": "Handlebars.js"
