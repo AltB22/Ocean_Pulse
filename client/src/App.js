@@ -1,13 +1,14 @@
 
 import './App.css';
-import TestComponent from './components/TestComponent';
+import HomeContainer from './components/HomeContainer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // const name = "Billy"
 
 function App() {
   return (
     <div className="App">
-      <TestComponent />
+      <HomeContainer />
     </div>
   );
 }

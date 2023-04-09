@@ -1,65 +1,42 @@
 import React from "react";
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 function NavTabs({ currentPage, HandlePageChange }) {
     return (
-        <div class="col-12">
-            <header>
-                <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-                    <div class="container-fluid">
+        <>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <Nav className="me-auto">
+              <Nav.Link href="#home"
+                onClick={() => HandlePageChange("Home")}
+                className={currentPage === "Home" ? "nav-link active" : "nav-link"}
+                >Home</Nav.Link>
 
-                        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a
-                                        href="#home"
-                                        onClick={() => HandlePageChange("Home")}
-                                        className={currentPage === "Home" ? "nav-link active" : "nav-link"}
-                                    >
-                                        Home
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a
-                                        href="#about"
-                                        onClick={() => HandlePageChange("About")}
-                                        className={currentPage === "About" ? "nav-link active" : "nav-link"}
-                                    >
-                                        About
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a
-                                        href="#contact"
-                                        onClick={() => HandlePageChange("Contact")}
-                                        className={currentPage === "Contact" ? "nav-link active" : "nav-link"}
-                                    >
-                                        Contact
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a
-                                        href="#login"
-                                        onClick={currentPage === "Login" ? "nav-link active" : "nav-link"}
-                                    >
-                                        Login
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a 
-                                    href="#signup"
-                                    onClick={currentPage === "Signup" ? "nav-link active" : "nav-link"}
-                                    >
-                                        Signup
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-        </div >
-    );
+              <Nav.Link href="#about"
+                onClick={() => HandlePageChange("About")}
+                className={currentPage === "About" ? "nav-link active" : "nav-link"}
+                >About</Nav.Link>
+
+              <Nav.Link href="#contact"
+                onClick={() => HandlePageChange("Contact")}
+                className={currentPage === "Contact" ? "nav-link active" : "nav-link"}
+                >Contact</Nav.Link>
+
+              <Nav.Link href="#locations"
+                onClick={() => HandlePageChange("Locations")}
+                className={currentPage === "Locations" ? "nav-link active" : "nav-link"}
+                >Locations</Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
+        </>
+    
+    );   
 }
 
 export default NavTabs;
+
+
+
