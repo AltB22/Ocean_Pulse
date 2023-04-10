@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import NavTabs from "./NavTabs";
-import Home from "./pages/Home";
+import Home from "./pages/home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Locations from "./pages/Locations";
