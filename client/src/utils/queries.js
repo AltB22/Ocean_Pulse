@@ -5,13 +5,13 @@ export const GET_LOCATIONS = gql`
 	query GetLocations {
 		locations {
 			_id
-			surfSpot
+			surf_spot
 			location
 			type
-			optimalSwellDirection
+			optimal_swell_direction
 			optimal_wind
-			optimalSwellSize
-			optimalTide
+			optimal_swell_size
+			optimal_tide
 			comments {
 				_id
 				comment
@@ -23,31 +23,31 @@ export const GET_LOCATIONS = gql`
 // Adds a new location
 export const ADD_LOCATION = gql`
 	mutation AddLocation(
-		$surfSpot: String!
+		$surf-spot: String!
 		$location: String!
 		$type: String!
-		$optimalSwellDirection: Int!
-		$optimal_wind: Int!
-		$optimalSwellSize: Int!
-		$optimalTide: String!
+		$optimal_swell_direction: String!
+		$optimal_wind: String!
+		$optimal_swell_size: String!
+		$optimal_tide: String!
 	) {
 		addLocation(
-			surfSpot: $surfSpot
+			surf_spot: $surf_spot
 			location: $location
 			type: $type
-			optimalSwellDirection: $optimalSwellDirection
+			optimal_swell_direction: $optimal_swell_direction
 			optimal_wind: $optimal_wind
-			optimalSwellSize: $optimalSwellSize
-			optimalTide: $optimalTide
+			optimal_swell_size: $optimal_swell_size
+			optima_tide: $optimal_tide
 		) {
 			_id
-			surfSpot
+			surf_spot
 			location
 			type
-			optimalSwellDirection
+			optimal_swell_direction
 			optimal_wind
-			optimalSwellSize
-			optimalTide
+			optimal_swell_size
+			optimal_tide
 			comments {
 				_id
 				comment
@@ -61,13 +61,13 @@ export const ADD_COMMENT = gql`
 	mutation AddComment($locationId: ID!, $comment: String!) {
 		addComment(locationId: $locationId, comment: $comment) {
 			_id
-			surfSpot
+			surf_spot
 			location
 			type
-			optimalSwellDirection
+			optimal_swell_direction
 			optimal_wind
-			optimalSwellSize
-			optimalTide
+			optimal_swell_size
+			optimal_tide
 			comments {
 				_id
 				comment
@@ -81,13 +81,13 @@ export const REMOVE_COMMENT = gql`
 	mutation RemoveComment($locationId: ID!, $commentId: ID!) {
 		removeComment(locationId: $locationId, commentId: $commentId) {
 			_id
-			surfSpot
+			surf_spot
 			location
 			type
-			optimalSwellDirection
+			optimal_swell_direction
 			optimal_wind
-			optimalSwellSize
-			optimalTide
+			optimal_swell_size
+			optimal_tide
 			comments {
 				_id
 				comment
