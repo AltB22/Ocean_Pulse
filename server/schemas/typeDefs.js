@@ -17,47 +17,48 @@ const typeDefs = gql`
 
 	type Query {
 		user(username: String!): User!
-		
 		me: User
+		location(surf_spot: String!): Location
 	}
-     type Comment {
-    _id: ID
-    comment: String
-  }
 
-  type Location {
-    _id: ID
-    surf_spot: String
-    location: String
-    type: String
-    optimal_swell_direction: String
-    optimal_wind: String
-    optimal_swell_size: String
-    optimal_tide: String
-    comments: [Comment]
-  }
+	type Comment {
+		_id: ID
+		comment: String
+	}
 
-  type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
-  
-    login(email: String!, password: String!): Auth
-  
-          addComment(
-              userId: ID!, comment: String!
-          ):Location
-  
-          removeUser: User
-  
-          removeComment(comment:String!):Location
-  
-      addLocation(surf_spot: String!, location: String!, type: String!, optimal_swell_direction: String!, optimal_wind: String!, optimal_swell_size: String!, optimal_tide: String!): Auth
+	type Location {
+		_id: ID
+		surf_spot: String
+		location: String
+		type: String
+		optimal_swell_direction: String
+		optimal_wind: String
+		optimal_swell_size: String
+		optimal_tide: String
+		comments: [Comment]
+	}
 
-     
-    }
+	type Mutation {
+		addUser(username: String!, email: String!, password: String!): Auth
 
-	
+		login(email: String!, password: String!): Auth
 
+		addComment(userId: ID!, comment: String!): Location
 
+		removeUser: User
+
+		removeComment(comment: String!): Location
+
+		addLocation(
+			surf_spot: String!
+			location: String!
+			type: String!
+			optimal_swell_direction: String!
+			optimal_wind: String!
+			optimal_swell_size: String!
+			optimal_tide: String!
+		): Auth
+	}
 `;
 
 module.exports = typeDefs;
@@ -65,4 +66,3 @@ module.exports = typeDefs;
 //below were lines 18 & 19
 //username: [User]!
 //username(userId: ID!): User
-
