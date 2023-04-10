@@ -22,7 +22,7 @@ const resolvers = {
 			return Location.findOne({ surf_spot });
 		},
 		user: async (parent, { username }) => {
-			// Added this resolver for the new 'user' field - Billy Isnt this done on line 8? -Bax
+			// Added this resolver for the new 'user' field - Billy Isnt this done on line 8? -Bax - it's find all v. find one. -Billy
 			return User.findOne({ username });
 		},
 	},

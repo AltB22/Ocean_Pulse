@@ -2,7 +2,7 @@ const express = require('express');//imports express package
 const app = express();//creates instance of express application
 const cors = require("cors");//allows for cross origin resource sharing
 require('dotenv').config({path: './config.env'});//loads env variables from config.env into process.env. We will need to switch to using config.env rather than separate .env file for sensitive data (I think) in order to use this specific line of code.
-const PORT = process.env.PORT || 3001;//establishes port
+const PORT =  3001;//establishes port process.env.PORT ||
 app.use(cors());//enables cors for the app.
 const { ApolloServer } = require('apollo-server-express');//
 const path = require('path');//Node utility for working with file/dir paths ie. ..//client/build below.
