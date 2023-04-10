@@ -1,19 +1,18 @@
 const express = require('express');
 const app = express();
-// Uncomment the following code once you have built the queries and mutations in the client folder
-const { ApolloServer } = require('apollo-server-express');
-const path = require('path');
+const cors = require("cors");//allows for cross origin resource sharing
+require('dotenv').config({path: './config.env'});//loads env variables into process.env
+const PORT = process.env.PORT || 5000;
+app.use(cors());
+// const { ApolloServer } = require('apollo-server-express');
+// const path = require('path');
 
-// Uncomment the following code once you have built the queries and mutations in the client folder
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
-// Comment out this code once you have built out queries and mutations in the client folder
-// const routes = require('./routes');
+// const routes = require('./routes');//This is not needed in a mern stack app.  Leaving for edification only.
 
-const PORT = process.env.PORT || 3001;
 
-// Uncomment the following code once you have built the queries and mutations in the client folder
 
 const server = new ApolloServer({
   typeDefs,
