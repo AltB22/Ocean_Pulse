@@ -33,6 +33,7 @@ function NavTabs({ currentPage, HandlePageChange }) {
 
                             <NavDropdown.Item href="#location1"
                                 onClick={() => HandlePageChange("Locations")}
+
                                 className={currentPage === "Locations"}
                             >One action</NavDropdown.Item>
 
@@ -96,7 +97,6 @@ function NavTabs({ currentPage, HandlePageChange }) {
 }
 
 export default NavTabs;
-
 
 // //Thinking about how to map the dropdown items so we can have them render locations and new locations.
 //  <NavDropdown title="Locations" id="basic-nav-dropdown">

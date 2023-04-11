@@ -1,11 +1,14 @@
 const express = require('express');//imports express package
 const app = express();//creates instance of express application
 const cors = require("cors");//allows for cross origin resource sharing
-require('dotenv').config({path: './config.env'});//loads env variables from config.env into process.env. We will need to switch to using config.env rather than separate .env file for sensitive data (I think) in order to use this specific line of code.
-const PORT = process.env.PORT || 3001;//establishes port
+const path = require('path');//Node utility for working with file/dir paths ie. ..//client/build below.
+require('dotenv').config();
+//loads env variables from config.env into process.env. We will need to switch to using config.env rather than separate .env file for sensitive data (I think) in order to use this specific line of code.
+const PORT =  3001;//establishes port process.env.PORT ||
 app.use(cors());//enables cors for the app.
 const { ApolloServer } = require('apollo-server-express');//
-const path = require('path');//Node utility for working with file/dir paths ie. ..//client/build below.
+const { authMiddleware } = require('./utils/auth');
+
 
 const { typeDefs, resolvers } = require('./schemas');//imports the type definitions and resolvers for use in gql schema
 const db = require('./config/connection');//imports the connection object from the config folder.  Connects to MongoDB using Mongoose.
@@ -15,7 +18,10 @@ const db = require('./config/connection');//imports the connection object from t
 const server = new ApolloServer({//creates new instance of ApolloServer using typeDefs & resolvers
   typeDefs,
   resolvers,
+  context: authMiddleware,
 });
+
+server.applyMiddleware({ app });
 
 app.use(express.urlencoded({ extended: true }));//enables parsing of URL-encoded data.
 app.use(express.json());//enables parsing of JSON data
