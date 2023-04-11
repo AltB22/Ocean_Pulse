@@ -26,29 +26,7 @@ const Locations = () => {
 
         <div className="Location">
             <h1 style={styles.heading}>Surf-Location</h1>
-
-            {/* <div style={styles.card}>
-                <Card style={{ width: '25rem' }} className="CardLocation">
-                    <Card.Body>
-                        <Card.Text>
-                            This is a longer card with supporting text below as a natural
-                            lead-in to additional content. This content is a little bit
-                            longer.
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            </div>
-            <div>
-                <Card style={{ width: '25rem' }} className="Card2Location" >
-                    <Card.Body>
-                        <Card.Text>
-                            This is a longer card with supporting text below as a natural
-                            lead-in to additional content. This content is a little bit
-                            longer.
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            </div> */}
+            
 
             <Row xs={1} md={2} className="g-4">
                 {Array.from({ length: 2 }).map((_, idx) => (
