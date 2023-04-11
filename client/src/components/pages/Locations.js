@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Row, Col} from 'react-bootstrap';
+import { Card, Row, Col } from 'react-bootstrap';
 
 
 const styles = {
@@ -14,10 +14,6 @@ const styles = {
         padding: '15px',
         textAlign: 'center',
     },
-    card: {
-        justifyContent: 'space-between',
-
-    }
 };
 
 
@@ -26,7 +22,7 @@ const Locations = () => {
 
         <div className="Location">
             <h1 style={styles.heading}>Surf-Location</h1>
-            
+
 
             <Row xs={1} md={2} className="g-4">
                 {Array.from({ length: 2 }).map((_, idx) => (
