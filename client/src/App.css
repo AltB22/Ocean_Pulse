@@ -29,15 +29,16 @@ body {
   background-color: #000000;
   color: rgb(143, 138, 138);
 }
-/* .Sidebar {
-  top: 0px;
-  left: 0;
-  bottom: 0;
-  width: 200px;
-  background-color: #718abc;
-  color: rgb(92, 20, 20);
+
+.Location {
   padding: 10px;
-} */
+  margin: 35px;
+  height: 100%;
+  /* background-color:  #2f7bff; */
+  justify-content: space-between;
+
+}
+
 
 .App-logo {
   height: 40vmin;

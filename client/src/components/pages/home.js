@@ -1,17 +1,16 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import { Card, Col, Row } from 'react-bootstrap';
-const AppCss = require('../../App.css')
+import Image1 from '../images/image1.jpeg';
+import Image2 from '../images/image2.jpeg';
+import Image3 from '../images/image3.jpeg';
+import Image4 from '../images/image4.jpg';
+import Image5 from '../images/image.card1.webp';
+import Image6 from '../images/image.card2.jpeg';
+import Image7 from '../images/image.card3.jpg';
+import Image8 from '../images/image.card4.jpeg';
 
 
-const style = {
-  title: {
-    justifyContent: 'center',
-  },
-  text: {
-    justifyContent: 'center',
-  },
-}
 const Home = () => {
   return (
     <>
@@ -22,8 +21,8 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=First slide&bg=373940"
-              alt="First slide"
+              src={Image1} max-width="100%" height="345%"
+              alt="ocean"
             />
             <Carousel.Caption>
               <h3>First slide label</h3>
@@ -63,7 +62,7 @@ const Home = () => {
       
    <aside className="Sidebar">
 
-    <h1 style={style.text}>Featured Locations</h1>
+    <h1>Featured Locations</h1>
 
    <Row xs={1} md={2} className="g-4">
       {Array.from({ length: 4 }).map((_, idx) => (
