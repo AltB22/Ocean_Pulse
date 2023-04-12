@@ -4,6 +4,7 @@ const { signToken } = require("../../client/src/utils/auth");
 
 //defines the resolvers
 const resolvers = {
+	//query is like get routes, handles retreival of data from the server.  It is itself an object that contains multiple resolvers for retreiving data.
 	Query: {
 		user: async () => {
 			return User.find();
@@ -22,12 +23,14 @@ const resolvers = {
 			return Location.findOne({ surf_spot });
 		},
 		user: async (parent, { username }) => {
-			// Added this resolver for the new 'user' field - Billy Isnt this done on line 8? -Bax
+			// Added this resolver for the new 'user' field - Billy Isnt this done on line 8? -Bax - it's find all v. find one. -Billy
 			return User.findOne({ username });
 		},
 	},
 
 	//Defines the Mutations
+	//Mutations are like post, put, & delelte routes.  It is itself an object that contains multiple resolvers for modifying data on the server.
+
 	Mutation: {
 		addUser: async (parent, { username, email, password }) => {
 			const user = await User.create({ username, email, password });
