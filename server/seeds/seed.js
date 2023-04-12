@@ -4,11 +4,13 @@ const locationSeeds = require('./locationData.json');
 const userSeeds = require('./userData.json');
 
 db.once('open', async () => {
-  try{
+  try {
     await Location.deleteMany({});
-    await User.deleteMany({});
-    await Location.create(locationSeeds);
+    console.log(await User.deleteMany({}));
+    // await Location.create(locationSeeds);
     await User.create(userSeeds);
+    await Location.create(locationSeeds);
+
 
     console.log('Users & Surf Locations Seeded!');
     process.exit(0);

@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
-require('dotenv').config();
+// require('dotenv').config({ path: __dirname+"/../../.env" });//comment in when seeding data
 
-console.log("descriptive console log",process.env.MONGODB_URI)
+console.log("log to confirm URI", process.env.MONGODB_URI)
 
 
 mongoose.connect(
 	process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/oceanPulse",
-	// process.env.REACT_APP_ATLAS_URI || "mongodb://127.0.0.1:27017/oceanPulse",
+
 	{
-        //may need to change some of this code
+		//may need to change some of this code
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		// useCreateIndex: true,
