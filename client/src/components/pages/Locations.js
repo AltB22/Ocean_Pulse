@@ -25,7 +25,7 @@ const Locations = () => {
 
             <Row xs={1} md={2} className="g-4">
                     <Col>
-                        <Card className="CardLocation1">
+                        <Card className="AboutLocation">
                             <Card.Body>
                                 <Card.Title>Card title</Card.Title>
                                 <Card.Text>
@@ -37,7 +37,7 @@ const Locations = () => {
                         </Card>
                     </Col>
                     <Col>
-                        <Card className="CardLocation2">
+                        <Card className="CurrentLocation">
                             <Card.Body>
                                 <Card.Title>Card title</Card.Title>
                                 <Card.Text>

@@ -21,39 +21,30 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={Image1} max-width="100%" height="345%"
+              src={Image1} height="500px" width="100%" 
               alt="ocean"
             />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Second slide&bg=282c34"
-              alt="Second slide"
+              src= {Image2} height="500px" width="100%"
+              alt="ocean"
             />
-
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Third slide&bg=20232a"
-              alt="Third slide"
+              src={Image3} height="500px" width="100%"
+              alt="beach-pic"
             />
-
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={Image4} height="500px" width="100%"
+              alt="ocean"
+            />
           </Carousel.Item>
         </Carousel>
       </div>
@@ -67,7 +58,7 @@ const Home = () => {
    <Row xs={1} md={2} className="g-4">
         <Col> 
           <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Img variant="top" src={Image7} height="275px" width="100%" />
             <Card.Body>
               <Card.Title>Card title</Card.Title>
               <Card.Text>
@@ -80,7 +71,7 @@ const Home = () => {
         </Col>
         <Col> 
           <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Img variant="top" src={Image6}  height="275px" width="100%" />
             <Card.Body>
               <Card.Title>Card title</Card.Title>
               <Card.Text>
@@ -93,7 +84,7 @@ const Home = () => {
         </Col>
         <Col> 
           <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Img variant="top" src={Image8} height="275px" width="100%" />
             <Card.Body>
               <Card.Title>Card title</Card.Title>
               <Card.Text>
@@ -106,7 +97,7 @@ const Home = () => {
         </Col>
         <Col> 
           <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Img variant="top" src={Image5} height="275px" width="100%" />
             <Card.Body>
               <Card.Title>Card title</Card.Title>
               <Card.Text>
