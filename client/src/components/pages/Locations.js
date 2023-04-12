@@ -3,16 +3,15 @@ import { Card, Row, Col } from 'react-bootstrap';
 
 
 const styles = {
-    card: {
-        margin: 40,
-        backgroundColor: "lightblue",
-    },
+
     heading: {
         minHeight: 50,
         lineheight: 3.5,
         fontSize: '2.5rem',
-        padding: '15px',
+        padding: '10px',
         textAlign: 'center',
+        margin: 30,
+        backgroundColor: " #2f7bff"
     },
 };
 
@@ -25,9 +24,8 @@ const Locations = () => {
 
 
             <Row xs={1} md={2} className="g-4">
-                {Array.from({ length: 2 }).map((_, idx) => (
                     <Col>
-                        <Card>
+                        <Card className="CardLocation1">
                             <Card.Body>
                                 <Card.Title>Card title</Card.Title>
                                 <Card.Text>
@@ -38,7 +36,18 @@ const Locations = () => {
                             </Card.Body>
                         </Card>
                     </Col>
-                ))}
+                    <Col>
+                        <Card className="CardLocation2">
+                            <Card.Body>
+                                <Card.Title>Card title</Card.Title>
+                                <Card.Text>
+                                    This is a longer card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit
+                                    longer.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
             </Row>
 
         </div>

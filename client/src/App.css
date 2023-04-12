@@ -32,13 +32,25 @@ body {
 
 .Location {
   padding: 10px;
-  margin: 35px;
+  margin: 10px;
   height: 100%;
-  /* background-color:  #2f7bff; */
-  justify-content: space-between;
-
+  background-color: #5da8d38e;
+  color: rgb(0, 0, 0);
 }
 
+.CardLocation1 {
+  padding: 50px;
+  margin: 80px;
+  height: 100%;
+  color: rgb(143, 138, 138);
+}
+
+.CardLocation2 {
+  padding: 50px;
+  margin: 80px;
+  height: 100%;
+  color: rgb(143, 138, 138);
+}
 
 .App-logo {
   height: 40vmin;
