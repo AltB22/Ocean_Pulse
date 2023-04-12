@@ -28,34 +28,34 @@ export const LOGIN_USER = gql`
 	}
 `;
 
-//Adds a new location 
+//Adds a new location
 export const ADD_LOCATION = gql`
 	mutation addLocation(
 		$surfSpot: String!
 		$location: String!
 		$type: String!
-		$optimalSwellDirection: Int!
-		$optimal_wind: Int!
-		$optimalSwellSize: Int!
-		$optimalTide: String!
+		$optimal_swell_direction: String!
+		$optimal_wind: String!
+		$optimal_swell_size: String!
+		$optimal_tide: String!
 	) {
 		addLocation(
-			surfSpot: $surfSpot
+			surf_spot: $surfSpot
 			location: $location
 			type: $type
-			optimalSwellDirection: $optimalSwellDirection
+			optimal_swell_direction: $optimal_swell_direction
 			optimal_wind: $optimal_wind
-			optimalSwellSize: $optimalSwellSize
-			optimalTide: $optimalTide
+			optimal_swell_size: $optimal_swell_size
+			optimal_tide: $optimal_tide
 		) {
 			_id
-			surfSpot
+			surf_spot
 			location
 			type
-			optimalSwellDirection
+			optimal_swell_direction
 			optimal_wind
-			optimalSwellSize
-			optimalTide
+			optimal_swell_size
+			optimal_tide
 			comments {
 				_id
 				comment
@@ -69,13 +69,13 @@ export const ADD_COMMENT = gql`
 	mutation addComment($locationId: ID!, $comment: String!) {
 		addComment(locationId: $locationId, comment: $comment) {
 			_id
-			surfSpot
+			surf_spot
 			location
 			type
-			optimalSwellDirection
+			optimal_swell_direction
 			optimal_wind
-			optimalSwellSize
-			optimalTide
+			optimal_swell_size
+			optimal_tide
 			comments {
 				_id
 				comment
@@ -89,13 +89,13 @@ export const REMOVE_COMMENT = gql`
 	mutation removeComment($comment: String!) {
 		removeComment(comment: $comment) {
 			_id
-			surfSpot
+			surf_spot
 			location
 			type
-			optimalSwellDirection
+			optimal_swell_direction
 			optimal_wind
-			optimalSwellSize
-			optimalTide
+			optimal_swell_size
+			optimal_tide
 			comments {
 				_id
 				comment
@@ -104,7 +104,7 @@ export const REMOVE_COMMENT = gql`
 	}
 `;
 
-//Removes a user that is logged in.
+//Removes a user that is logged
 export const REMOVE_USER = gql`
 	mutation removeUser {
 		removeUser {

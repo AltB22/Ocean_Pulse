@@ -1,17 +1,17 @@
 import { gql } from "@apollo/client";
 
-//GETs a list of locations
+//Query that retrieves a list of all locations and comments. We may not use this - Bax
 export const GET_LOCATIONS = gql`
 	query GetLocations {
 		locations {
 			_id
-			surfSpot
+			surf_spot
 			location
 			type
-			optimalSwellDirection
+			optimal_swell_direction
 			optimal_wind
-			optimalSwellSize
-			optimalTide
+			optimal_swell_size
+			optimal_tide
 			comments {
 				_id
 				comment
@@ -20,34 +20,17 @@ export const GET_LOCATIONS = gql`
 	}
 `;
 
-// Adds a new location
-export const ADD_LOCATION = gql`
-	mutation AddLocation(
-		$surfSpot: String!
-		$location: String!
-		$type: String!
-		$optimalSwellDirection: Int!
-		$optimal_wind: Int!
-		$optimalSwellSize: Int!
-		$optimalTide: String!
-	) {
-		addLocation(
-			surfSpot: $surfSpot
-			location: $location
-			type: $type
-			optimalSwellDirection: $optimalSwellDirection
-			optimal_wind: $optimal_wind
-			optimalSwellSize: $optimalSwellSize
-			optimalTide: $optimalTide
-		) {
+export const GET_SINGLE_LOCATION = gql`
+	query GetLocation($locationId: ID!) {
+		location(id: $locationId) {
 			_id
-			surfSpot
+			surf_spot
 			location
 			type
-			optimalSwellDirection
+			optimal_swell_direction
 			optimal_wind
-			optimalSwellSize
-			optimalTide
+			optimal_swell_size
+			optimal_tide
 			comments {
 				_id
 				comment
@@ -56,42 +39,3 @@ export const ADD_LOCATION = gql`
 	}
 `;
 
-//Adds a new comment to a location
-export const ADD_COMMENT = gql`
-	mutation AddComment($locationId: ID!, $comment: String!) {
-		addComment(locationId: $locationId, comment: $comment) {
-			_id
-			surfSpot
-			location
-			type
-			optimalSwellDirection
-			optimal_wind
-			optimalSwellSize
-			optimalTide
-			comments {
-				_id
-				comment
-			}
-		}
-	}
-`;
-
-//Removes a comment from a specific location
-export const REMOVE_COMMENT = gql`
-	mutation RemoveComment($locationId: ID!, $commentId: ID!) {
-		removeComment(locationId: $locationId, commentId: $commentId) {
-			_id
-			surfSpot
-			location
-			type
-			optimalSwellDirection
-			optimal_wind
-			optimalSwellSize
-			optimalTide
-			comments {
-				_id
-				comment
-			}
-		}
-	}
-`;

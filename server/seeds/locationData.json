@@ -1,13 +1,15 @@
 [
   {
-    "surf_spot": "Ocean Beach",
-    "location": "San Francisco, CA",
-    "type": "Beach - sand bottom with shifting peaks",
-    "optimal_swell_direction": "NW, W, SW",
-    "optimal_wind": "light to none - up to 10mph NE",
-    "optimal_swell_size": "Waist high to double-overhead (note: can handle much bigger but becomes impossible to paddle out)",
-    "optimal_tide": "All-tides",
-    "summary": "Ocean Beach is one of the Bay Area's best surfing spots. It is noteworthy for its strong currents and waves, which makes it popular for serious surfers. Rapid rip currents and cold water make the ocean dangerous for casual swimmers and they have even been swept away and drowned. Ocean Beach is bordered by Kelly's Cove on the north end and Sloat Street on the south end."
+    "location": {
+      "surf_spot": "Ocean Beach",
+      "city": "San Francisco, CA",
+      "type": "Beach - sand bottom with shifting peaks",
+      "optimal_swell_direction": "NW, W, SW",
+      "optimal_wind": "light to none - up to 10mph NE",
+      "optimal_swell_size": "Waist high to double-overhead (note: can handle much bigger but becomes impossible to paddle out)",
+      "optimal_tide": "All-tides",
+      "summary": "Ocean Beach is one of the Bay Area's best surfing spots. It is noteworthy for its strong currents and waves, which makes it popular for serious surfers. Rapid rip currents and cold water make the ocean dangerous for casual swimmers and they have even been swept away and drowned. Ocean Beach is bordered by Kelly's Cove on the north end and Sloat Street on the south end."
+    }
   },
   {
     "surf_spot": "Mavericks",
@@ -17,7 +19,7 @@
     "optimal_wind": "light to none - up to 10mph NE",
     "optimal_swell_size": "Minimum size triple overhead.  Can handle and routinely sees days up to 5-6x overhead",
     "optimal_tide": "Low to Mid",
-    "summary": "The Mavericks is known for Big Wave Surfing and is very dangerous. These monstrous waves have already claimed the lives of famous surfers Mark Foo(1994), Donnie Solomon(1995) and Todd Chesser(1997). Also of note, The Mavericks Invitational, the first surfing contest at Mavericks was held in 1999. To later become known as Titans of Mavericks.The important spots that Maverick's has to offer are the Outer Bowl, The Corner, Lates Bowl and The Cauldron."
+    "summary": "Mavericks is known for Big Wave Surfing and is very dangerous. These monstrous waves have already claimed the lives of famous surfers Mark Foo(1994), Donnie Solomon(1995) and Todd Chesser(1997). Also of note, The Mavericks Invitational, the first surfing contest at Mavericks was held in 1999. To later become known as Titans of Mavericks.The important spots that Maverick's has to offer are the Outer Bowl, The Corner, Lates Bowl and The Cauldron."
   },
   {
     "surf_spot": "Malibu",
@@ -167,7 +169,7 @@
     "optimal_wind": "NE, N, NW, or none",
     "optimal_swell_size": "Chest high to double overhead",
     "optimal_tide": "All - best on mid incoming",
-    "summary": ""
+    "summary": "Pleasure Point offers something for every surfer from shortboards to longboards. This is a very popular destination for all thigs surfing. Pleasure Point is located in Santa Cruz, CA and is producing it's fair share of amazing surfers."
   },
   {
     "surf_spot": "Steamer Lane",

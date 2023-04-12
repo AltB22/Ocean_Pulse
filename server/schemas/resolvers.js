@@ -4,6 +4,7 @@ const { signToken } = require("../../client/src/utils/auth");
 
 //defines the resolvers
 const resolvers = {
+	//query is like get routes, handles retreival of data from the server.  It is itself an object that contains multiple resolvers for retreiving data.
 	Query: {
 		user: async () => {
 			return User.find();
@@ -13,19 +14,26 @@ const resolvers = {
 		// },
 		me: async (parent, args, context) => {
 			if (context.user) {
-				return User.findOne({ _id: context.user._id });//we may need to adjust this to context.userId - Billy
+				return User.findOne({ _id: context.user._id }); //we may need to adjust this to context.userId - Billy
 			}
 			throw new AuthenticationError("You need to be logged in!");
 		},
-		user: async (parent, { username }) => { // Added this resolver for the new 'user' field - Billy
+		//added Location to match the TypeDefs so that we can find one location. - Bax
+		location: async (parent, { surf_spot }) => {
+			return Location.findOne({ surf_spot });
+		},
+		user: async (parent, { username }) => {
+			// Added this resolver for the new 'user' field - Billy Isnt this done on line 8? -Bax - it's find all v. find one. -Billy
 			return User.findOne({ username });
-		  }
+		},
 	},
 
 	//Defines the Mutations
+	//Mutations are like post, put, & delelte routes.  It is itself an object that contains multiple resolvers for modifying data on the server.
+
 	Mutation: {
-		addUser: async (parent, { name, email, password }) => {
-			const user = await User.create({ name, email, password });
+		addUser: async (parent, { username, email, password }) => {
+			const user = await User.create({ username, email, password });
 			const token = signToken(user);
 			return { token, user };
 		},
@@ -46,7 +54,7 @@ const resolvers = {
 				return Location.findOneAndUpdate(
 					{ _id: locationId },
 					{
-						$addToSet: { comments: comment },
+						$addToSet: { comments: { comment, user: context.user._id } },
 					},
 					{
 						new: true,
@@ -60,7 +68,7 @@ const resolvers = {
 			if (context.user) {
 				const location = await Location.create({
 					...args,
-					user: context.user._id,//we may need to adjust this to context.userId - Billy
+					user: context.user._id, //we may need to adjust this to context.userId - Billy
 				});
 				return location;
 			}
@@ -69,15 +77,15 @@ const resolvers = {
 
 		removeUser: async (parent, args, context) => {
 			if (context.user) {
-				return User.findOneAndDelete({ _id: context.user._id });//we may need to adjust this to context.userId - Billy
+				return User.findOneAndDelete({ _id: context.user._id }); //we may need to adjust this to context.userId - Billy
 			}
 			throw new AuthenticationError("You need to be logged in!");
 		},
-		removeComment: async (parent, { comment }, context) => {
+		removeComment: async (parent, {locationId, comment }, context) => {
 			if (context.user) {
 				return Location.findOneAndUpdate(
-					{ _id: context.location._id },//we may need to adjust this to context.locationId - Billy
-					{ $pull: { comments: comment } },
+					{ _id: locationId }, //we may need to adjust this to context.locationId - Billy this may work now -Bax
+					{ $pull: { comments: {_id: comment }} },
 					{ new: true }
 				);
 			}
