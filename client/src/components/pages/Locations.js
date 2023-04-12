@@ -1,19 +1,19 @@
 import React from "react";
-import { Card, Row, Col } from 'react-bootstrap';
+// import { Card, Row, Col } from 'react-bootstrap';
 
 
-const styles = {
+// const styles = {
 
-    heading: {
-        minHeight: 50,
-        lineheight: 3.5,
-        fontSize: '2.5rem',
-        padding: '10px',
-        textAlign: 'center',
-        margin: 30,
-        backgroundColor: " #2f7bff"
-    },
-};
+//     heading: {
+//         minHeight: 50,
+//         lineheight: 3.5,
+//         fontSize: '2.5rem',
+//         padding: '10px',
+//         textAlign: 'center',
+//         margin: 30,
+//         backgroundColor: " #2f7bff"
+//     },
+// };
 
 
 
