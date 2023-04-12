@@ -7,11 +7,11 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 function NavTabs({ currentPage, HandlePageChange }) {
 
     // const locations = ['location1', 'location2', 'location3', 'location4', 'location5', 'location6', 'location7', 'location8', 'location9', 'location10'];
- 
+
     // // const dropDownEl = document.getElementById ('#basic-nav-dropdown');
-    
+
     // for (let i = 0; i < locations.length; i++) {
-    
+
     //   const dropDownItem = document.createElement('NavDropdown.Item', { href: `#${locations[i]}`, onClick: () => HandlePageChange("Locations"), className: currentPage === "Locations" ? "nav-link active" : "nav-link" }, locations[i]
     //     );
     //    document.getElementById('basic-nav-dropdown').appendChild(dropDownItem);
@@ -43,52 +43,102 @@ function NavTabs({ currentPage, HandlePageChange }) {
                                 onClick={() => HandlePageChange("Locations")}
 
                                 className={currentPage === "Locations"}
-                            >One action</NavDropdown.Item>
+                            >Ocean Beach</NavDropdown.Item>
 
                             <NavDropdown.Item href="#location2"
                                 onClick={() => HandlePageChange("Locations")}
                                 className={currentPage === "Locations"}
-                            >Another action</NavDropdown.Item>
+                            >Mavericks</NavDropdown.Item>
 
                             <NavDropdown.Item href="#location3"
                                 onClick={() => HandlePageChange("Locations")}
                                 className={currentPage === "Locations"}
-                            >Something</NavDropdown.Item>
+                            >Malibu</NavDropdown.Item>
 
                             <NavDropdown.Item href="#location4"
                                 onClick={() => HandlePageChange("Locations")}
                                 className={currentPage === "Locations"}
-                            >Something</NavDropdown.Item>
+                            >The Wedge</NavDropdown.Item>
 
                             <NavDropdown.Item href="#location5"
                                 onClick={() => HandlePageChange("Locations")}
                                 className={currentPage === "Locations"}
-                            >Something</NavDropdown.Item>
+                            >Pismo Beach Pier</NavDropdown.Item>
 
                             <NavDropdown.Item href="#location6"
                                 onClick={() => HandlePageChange("Locations")}
                                 className={currentPage === "Locations"}
-                            >Something</NavDropdown.Item>
+                            >Rincon</NavDropdown.Item>
 
                             <NavDropdown.Item href="#location7"
                                 onClick={() => HandlePageChange("Locations")}
                                 className={currentPage === "Locations"}
-                            >Something</NavDropdown.Item>
+                            >Huntington Beach Pier</NavDropdown.Item>
 
                             <NavDropdown.Item href="#location8"
                                 onClick={() => HandlePageChange("Locations")}
                                 className={currentPage === "Locations"}
-                            >Something</NavDropdown.Item>
+                            >San Onofre Beach</NavDropdown.Item>
 
                             <NavDropdown.Item href="#location9"
                                 onClick={() => HandlePageChange("Locations")}
                                 className={currentPage === "Locations"}
-                            >Something</NavDropdown.Item>
+                            >Asilomar Beach</NavDropdown.Item>
 
                             <NavDropdown.Item href="#location10"
                                 onClick={() => HandlePageChange("Locations")}
                                 className={currentPage === "Locations"}
-                            >Something</NavDropdown.Item>
+                            >Cardiff Reef</NavDropdown.Item>
+
+                            <NavDropdown.Item href="#location11"
+                                onClick={() => HandlePageChange("Locations")}
+                                className={currentPage === "Locations"}
+                            >Oceanside Pier</NavDropdown.Item>
+
+                            <NavDropdown.Item href="#location12"
+                                onClick={() => HandlePageChange("Locations")}
+                                className={currentPage === "Locations"}
+                            >Doheny Beach</NavDropdown.Item>
+
+                            <NavDropdown.Item href="#location13"
+                                onClick={() => HandlePageChange("Locations")}
+                                className={currentPage === "Locations"}
+                            >Lower Trestles</NavDropdown.Item>
+
+                            <NavDropdown.Item href="#location14"
+                                onClick={() => HandlePageChange("Locations")}
+                                className={currentPage === "Locations"}
+                            >Black Beach</NavDropdown.Item>
+
+                            <NavDropdown.Item href="#location15"
+                                onClick={() => HandlePageChange("Locations")}
+                                className={currentPage === "Locations"}
+                            >Windandsea Beach</NavDropdown.Item>
+
+                            <NavDropdown.Item href="#location16"
+                                onClick={() => HandlePageChange("Locations")}
+                                className={currentPage === "Locations"}
+                            >Swamis</NavDropdown.Item>
+
+                            <NavDropdown.Item href="#location17"
+                                onClick={() => HandlePageChange("Locations")}
+                                className={currentPage === "Locations"}
+                            >Pleasure Point</NavDropdown.Item>
+
+                            <NavDropdown.Item href="#location18"
+                                onClick={() => HandlePageChange("Locations")}
+                                className={currentPage === "Locations"}
+                            >Steamer Lane</NavDropdown.Item>
+
+                            <NavDropdown.Item href="#location19"
+                                onClick={() => HandlePageChange("Locations")}
+                                className={currentPage === "Locations"}
+                            >Venture Point</NavDropdown.Item>
+
+                            <NavDropdown.Item href="#location20"
+                                onClick={() => HandlePageChange("Locations")}
+                                className={currentPage === "Locations"}
+                            >Pacifica / Linda Mar Beach</NavDropdown.Item>
 
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#addLocation"
