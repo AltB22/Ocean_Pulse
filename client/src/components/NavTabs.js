@@ -1,10 +1,22 @@
-import React from "react";
+import React, { createElement } from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavTabs({ currentPage, HandlePageChange }) {
+
+    // const locations = ['location1', 'location2', 'location3', 'location4', 'location5', 'location6', 'location7', 'location8', 'location9', 'location10'];
+ 
+    // // const dropDownEl = document.getElementById ('#basic-nav-dropdown');
+    
+    // for (let i = 0; i < locations.length; i++) {
+    
+    //   const dropDownItem = document.createElement('NavDropdown.Item', { href: `#${locations[i]}`, onClick: () => HandlePageChange("Locations"), className: currentPage === "Locations" ? "nav-link active" : "nav-link" }, locations[i]
+    //     );
+    //    document.getElementById('basic-nav-dropdown').appendChild(dropDownItem);
+    // }
+
     return (
         <>
             <Navbar bg="dark" variant="dark">
@@ -25,10 +37,6 @@ function NavTabs({ currentPage, HandlePageChange }) {
                             className={currentPage === "Contact" ? "nav-link active" : "nav-link"}
                         >Contact</Nav.Link>
 
-                        {/* <Nav.Link href="#locations"
-                onClick={() => HandlePageChange("Locations")}
-                className={currentPage === "Locations" ? "nav-link active" : "nav-link"}
-                >Locations</Nav.Link> */}
                         <NavDropdown title="Locations" id="basic-nav-dropdown">
 
                             <NavDropdown.Item href="#location1"
