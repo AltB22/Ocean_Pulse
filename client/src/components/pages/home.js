@@ -1,17 +1,16 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import { Card, Col, Row } from 'react-bootstrap';
-const AppCss = require('../../App.css')
+import Image1 from '../images/image1.jpeg';
+import Image2 from '../images/image2.jpeg';
+import Image3 from '../images/image3.jpeg';
+import Image4 from '../images/image4.jpg';
+import Image5 from '../images/image.card1.webp';
+import Image6 from '../images/image.card2.jpeg';
+import Image7 from '../images/image.card3.jpg';
+import Image8 from '../images/image.card4.jpeg';
 
 
-const style = {
-  title: {
-    justifyContent: 'center',
-  },
-  text: {
-    justifyContent: 'center',
-  },
-}
 const Home = () => {
   return (
     <>
@@ -22,39 +21,30 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=First slide&bg=373940"
-              alt="First slide"
+              src={Image1} height="500px" width="100%" 
+              alt="ocean"
             />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Second slide&bg=282c34"
-              alt="Second slide"
+              src= {Image2} height="500px" width="100%"
+              alt="ocean"
             />
-
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Third slide&bg=20232a"
-              alt="Third slide"
+              src={Image3} height="500px" width="100%"
+              alt="beach-pic"
             />
-
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={Image4} height="500px" width="100%"
+              alt="ocean"
+            />
           </Carousel.Item>
         </Carousel>
       </div>
@@ -63,13 +53,12 @@ const Home = () => {
       
    <aside className="Sidebar">
 
-    <h1 style={style.text}>Featured Locations</h1>
+    <h1>Featured Locations</h1>
 
    <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 4 }).map((_, idx) => (
         <Col> 
           <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Img variant="top" src={Image7} height="275px" width="100%" />
             <Card.Body>
               <Card.Title>Card title</Card.Title>
               <Card.Text>
@@ -80,7 +69,45 @@ const Home = () => {
             </Card.Body>
           </Card>
         </Col>
-      ))}
+        <Col> 
+          <Card>
+            <Card.Img variant="top" src={Image6}  height="275px" width="100%" />
+            <Card.Body>
+              <Card.Title>Card title</Card.Title>
+              <Card.Text>
+                This is a longer card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col> 
+          <Card>
+            <Card.Img variant="top" src={Image8} height="275px" width="100%" />
+            <Card.Body>
+              <Card.Title>Card title</Card.Title>
+              <Card.Text>
+                This is a longer card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col> 
+          <Card>
+            <Card.Img variant="top" src={Image5} height="275px" width="100%" />
+            <Card.Body>
+              <Card.Title>Card title</Card.Title>
+              <Card.Text>
+                This is a longer card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
     </Row>
    </aside>
    <br>
