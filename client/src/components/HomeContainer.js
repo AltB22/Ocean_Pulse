@@ -29,12 +29,12 @@ export default function HomeContainer() {
 		if (currentPage === "AddLocation") {
 			return <AddLocation />;
 		}
-		if (currentPage === "Login") {
-			return <Login />;
-		}
-		if (currentPage === "Signup") {
-			return <Signup />;
-		}
+		// if (currentPage === "Login") {
+		// 	return <Login />;
+		// }
+		// if (currentPage === "Signup") {
+		// 	return <Signup />;
+		// }
 	};
 
 	return (
