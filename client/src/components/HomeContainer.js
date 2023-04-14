@@ -23,7 +23,7 @@ export default function HomeContainer() {
 		if (currentPage === "Contact") {
 			return <Contact />;
 		}
-		if (currentPage === "Locations") {
+		if (currentPage === "Location") {
 			return <Locations />;
 		}
 		if (currentPage === "AddLocation") {
