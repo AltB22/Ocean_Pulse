@@ -1,4 +1,5 @@
-import React, { createElement } from "react";
+// import React, { createElement } from "react";
+import { NavLink } from "react-bootstrap";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -146,6 +147,19 @@ function NavTabs({ currentPage, HandlePageChange }) {
                                 className={currentPage === "AddLocation"}
                             >Add Location</NavDropdown.Item>
                         </NavDropdown>
+
+                        {/* <NavLink to="/login"
+                            onClick={() => HandlePageChange("Login")}
+                            className={currentPage === "Login" ? "nav-link active" : "nav-link"}
+                        >Login</NavLink>
+
+                        <NavLink to="/signup"
+                            onClick={() => HandlePageChange("Signup")}
+                            className={currentPage === "Signup" ? "nav-link active" : "nav-link"}
+                        >Signup</NavLink> */}
+                        
+
+
                     </Nav>
                 </Container>
             </Navbar>
@@ -155,27 +169,3 @@ function NavTabs({ currentPage, HandlePageChange }) {
 }
 
 export default NavTabs;
-
-// //Thinking about how to map the dropdown items so we can have them render locations and new locations.
-//  <NavDropdown title="Locations" id="basic-nav-dropdown">
-// 		{locations.map((location) => (
-// 			<NavDropdown.Item
-// 				key={location.id}
-// 				href={`#${location.id}`}
-// 				onClick={() => HandlePageChange(location.surf_spot)}
-// 				className={
-// 					currentPage === location.surf_spot ? "nav-link active" : "nav-link"
-// 				}>
-// 				{location.surf_spot}
-// 			</NavDropdown.Item>
-// 		))}
-// 		<NavDropdown.Divider />
-// 		<NavDropdown.Item
-// 			href="#addLocation"
-// 			onClick={() => HandlePageChange("AddLocation")}
-// 			className={
-// 				currentPage === "AddLocation" ? "nav-link active" : "nav-link"
-// 			}>
-// 			Add Location
-// 		</NavDropdown.Item>
-//  </NavDropdown>;
