@@ -5,7 +5,7 @@ const path = require('path');//Node utility for working with file/dir paths ie. 
 
 
 
-const PORT = 3001;//establishes port process.env.PORT ||
+const PORT = process.env.PORT || 3001;
 
 const { authMiddleware } = require('./utils/auth');
 const { ApolloServer } = require('apollo-server-express');//
@@ -30,13 +30,14 @@ if (process.env.NODE_ENV === 'production') {
   require('dotenv').config({path: '../.env'});
 }
 
-const db = require('./config/connection');//imports the connection object from the config folder.  Connects to MongoDB using Mongoose.
-const startApolloServer = async (typeDefs, resolvers) => {
-  await server.start();
-  server.applyMiddleware({ app });
-  //starts the server and listens for incoming requests. Once connection established, app listens on the specified port.
-  db.once('open', () => {
-    app.listen(PORT, () => console.log(`Now listening on localhost: ${PORT}`));
-  });
-}
-startApolloServer(typeDefs, resolvers);
+
+//starts the server and listens for incoming requests. Once connection established, app listens on the specified port.
+db.once('open', () => {
+  app.listen(PORT, () => console.log(`Now listening on localhost: ${PORT}`));
+});
+
+//Added error handling middleware for unhandled errors
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ error: 'Internal server error' });
+});
