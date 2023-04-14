@@ -52,6 +52,31 @@ body {
   color: rgb(143, 138, 138);
 }
 
+.SafetyVideo { 
+  padding: 45px;
+  margin:1px;
+  height: 100%;
+  color: rgb(0, 0, 0);
+  background-color:  rgb(143, 138, 138);
+}
+
+.Text {
+ align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  margin: 10px;
+  height: 100%;
+  background-color: #2f7bff;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

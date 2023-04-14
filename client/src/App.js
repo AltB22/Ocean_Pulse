@@ -36,6 +36,7 @@ function App() {
       <div className="App">
         <HomeContainer />
       </div>
+
     </ApolloProvider>
   );
 }

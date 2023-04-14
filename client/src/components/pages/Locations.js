@@ -30,6 +30,8 @@ const styles = {
 
 
 const Locations = () => {
+
+    
     return (
 
         <div className="Location">
