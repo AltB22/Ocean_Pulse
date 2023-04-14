@@ -5,8 +5,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Locations from "./pages/Locations";
 import AddLocation from "./pages/AddLocation";
-// import Login from "./pages/Login";
-// import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 export default function HomeContainer() {
     const [currentPage, setCurrentPage] = useState("Home");
@@ -28,6 +28,12 @@ export default function HomeContainer() {
         }
         if (currentPage === "AddLocation") {
             return <AddLocation />;
+        }
+        if (currentPage === "Login") {
+            return <Login />;
+        }
+        if (currentPage === "Signup") {
+            return <Signup />;
         }
     };
 
