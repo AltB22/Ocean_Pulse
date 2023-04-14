@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row, Container, Image } from 'react-bootstrap';
 import Image1 from '../images/image1.jpeg';
 import Image2 from '../images/image2.jpeg';
 import Image3 from '../images/image3.jpeg';
@@ -9,6 +9,7 @@ import Image5 from '../images/image.card1.webp';
 import Image6 from '../images/image.card2.jpeg';
 import Image7 from '../images/image.card3.jpg';
 import Image8 from '../images/image.card4.jpeg';
+import Safety from '../images/Surf_safety.png';
 
 
 const Home = () => {
@@ -114,14 +115,34 @@ const Home = () => {
       </br>
       <section className="SafetyVideo">
         <div className="Text">
-        <h1>Surfing Safety</h1>
-        <p> - Surfing is a great way to get exercise and enjoy the outdoors. But it can also be dangerous. If you're a beginner, you should learn how to surf safely. If you're an experienced surfer, you should still be careful. Here are some tips to help you stay safe while surfing.</p>
+          <h1>Surfing Safety</h1>
+          <p> - Surfing is a great way to get exercise and enjoy the outdoors. But it can also be dangerous. If you're a beginner, you should learn how to surf safely. If you're an experienced surfer, you should still be careful. Here are some tips to help you stay safe while surfing.</p>
         </div>
         <iframe title="This is a unique title" width="420" height="315"
           src="https://www.youtube.com/embed/tgbNymZ7vqY">
         </iframe>
-        </section>
-     
+        <Container className="SafetyImage">
+          <Row xs={1} md={2} className="g-4">
+            <Card.Img variant="down" src={Safety} height="275px" width="100%" />
+            <Card.Body className="Info">
+              <Card.Title>Surf Tips</Card.Title>
+              <Card.Text>
+              <ul>
+                <li>Always surf with a buddy.</li>
+                <li>Never surf alone.</li>
+                <li>Always wear a leash.</li>
+                <li>Always wear a life jacket.</li>
+                <li>Always wear a wetsuit.</li>
+                <li>Always wear a rash guard.</li>
+              </ul>
+              <p>- For more Instructions access the link below!!!</p>
+                <a href="https://www.academyofsurfing.com/sports/surfing/learn-to-surf/surfing-safety">Surf Safety Tips</a>
+              </Card.Text>
+            </Card.Body>
+          </Row>
+        </Container>
+      </section>
+
     </>
   )
 }
