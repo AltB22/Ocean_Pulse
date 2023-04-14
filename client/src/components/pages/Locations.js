@@ -1,26 +1,34 @@
 import React from "react";
-import { Card, Row, Col } from 'react-bootstrap';
+// import { Card, Row, Col } from 'react-bootstrap';
 
 
-const styles = {
+// const styles = {
 
-    heading: {
-        minHeight: 50,
-        lineheight: 3.5,
-        fontSize: '2.5rem',
-        padding: '10px',
-        textAlign: 'center',
-        margin: 30,
-        backgroundColor: " #2f7bff"
-    },
-};
+//     heading: {
+//         minHeight: 50,
+//         lineheight: 3.5,
+//         fontSize: '2.5rem',
+//         padding: '10px',
+//         textAlign: 'center',
+//         margin: 30,
+//         backgroundColor: " #2f7bff"
+//     },
+// };
 
 
-const Locations = () => {
-    return (
 
-        <div className="Location">
-            <h1 style={styles.heading}>Surf-Location</h1>
+//code for adding specific locations???-bax
+
+// Import the `useParams()` hook
+import {useParams} from "react-router-dom";
+import {useQuery} from "@apollo/client";
+
+// import CommentForm from '../components/commentForm';
+// import {ADD_COMMENT} from "../../utils/mutations";
+// import {REMOVE_COMMENT} from "../../utils/mutations"
+// import Auth from "../../utils/auth";
+
+import {GET_SINGLE_LOCATION} from "../../utils/queries";
 
 
             <Row xs={1} md={2} className="g-4">
@@ -50,11 +58,24 @@ const Locations = () => {
                     </Col>
             </Row>
 
-        </div>
-    );
+	return (
+		<div>
+			<h1>{location.surf_spot}</h1>
+		</div>
+	);
 };
 
-export default Locations;
+export default SingleLocation;
+// const Locations = () => {
+// 	return (
+// 		<div>
+// 			<h1>Locations</h1>
+			
+// 		</div>
+// 	);
+// };
+
+// export default Locations;
 
 
 // //code for adding specific locations???-bax

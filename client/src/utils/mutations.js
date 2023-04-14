@@ -9,6 +9,7 @@ export const ADD_USER = gql`
 				_id
 				name
 				email
+				password
 			}
 		}
 	}
@@ -23,6 +24,7 @@ export const LOGIN_USER = gql`
 				_id
 				name
 				email
+				password
 			}
 		}
 	}
@@ -111,6 +113,7 @@ export const REMOVE_USER = gql`
 			_id
 			name
 			email
+			password
 		}
 	}
 `;

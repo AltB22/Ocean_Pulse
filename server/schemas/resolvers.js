@@ -22,9 +22,9 @@ const resolvers = {
 		location: async (parent, { surf_spot }) => {
 			return Location.findOne({ surf_spot });
 		},
-		user: async (parent, { username }) => {
+		user: async (parent, { name }) => {
 			// Added this resolver for the new 'user' field - Billy Isnt this done on line 8? -Bax - it's find all v. find one. -Billy
-			return User.findOne({ username });
+			return User.findOne({ name });
 		},
 	},
 
@@ -32,8 +32,8 @@ const resolvers = {
 	//Mutations are like post, put, & delelte routes.  It is itself an object that contains multiple resolvers for modifying data on the server.
 
 	Mutation: {
-		addUser: async (parent, { username, email, password }) => {
-			const user = await User.create({ username, email, password });
+		addUser: async (parent, { name, email, password }) => {
+			const user = await User.create({ name, email, password });
 			const token = signToken(user);
 			return { token, user };
 		},

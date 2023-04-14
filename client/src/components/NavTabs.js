@@ -169,27 +169,3 @@ function NavTabs({ currentPage, HandlePageChange }) {
 }
 
 export default NavTabs;
-
-// //Thinking about how to map the dropdown items so we can have them render locations and new locations.
-//  <NavDropdown title="Locations" id="basic-nav-dropdown">
-// 		{locations.map((location) => (
-// 			<NavDropdown.Item
-// 				key={location.id}
-// 				href={`#${location.id}`}
-// 				onClick={() => HandlePageChange(location.surf_spot)}
-// 				className={
-// 					currentPage === location.surf_spot ? "nav-link active" : "nav-link"
-// 				}>
-// 				{location.surf_spot}
-// 			</NavDropdown.Item>
-// 		))}
-// 		<NavDropdown.Divider />
-// 		<NavDropdown.Item
-// 			href="#addLocation"
-// 			onClick={() => HandlePageChange("AddLocation")}
-// 			className={
-// 				currentPage === "AddLocation" ? "nav-link active" : "nav-link"
-// 			}>
-// 			Add Location
-// 		</NavDropdown.Item>
-//  </NavDropdown>;
