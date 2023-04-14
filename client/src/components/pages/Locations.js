@@ -48,28 +48,31 @@ const Locations = () => {
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                     Search Locations
                 </Dropdown.Toggle>
+                {/* {data && data.location && data.location.surf_spot && <h2>{data.location.surf_spot}</h2>} */}
 
                 <Dropdown.Menu>
                    {locationData.map((spot, i)=>(
                      <Dropdown.Item href="#/action-1" key={i} eventKey={i}>
-                        {spot.surf_spot}
+                        {spot?.surf_spot}
                      </Dropdown.Item>
                    ))}
                 </Dropdown.Menu>
             </Dropdown>
-
-            <h1 style={styles.heading} >{selectedSpot.surf_spot}</h1>
+            
+            <h1 style={styles.heading} >{selectedSpot?.surf_spot}</h1>
             {selectedSpot && (
         <Row xs={1} md={2} className="g-4">
           <Col>
             <Card className="AboutLocation">
               <Card.Body>
                 <Card.Title>About {selectedSpot.surf_spot}</Card.Title>
-                <Card.Text>{selectedSpot.optimal_swell_direction}</Card.Text>
-                <Card.Text>{selectedSpot.optimal_swell_size}</Card.Text>
-                <Card.Text>{selectedSpot.optimal_tide}</Card.Text>
-                <Card.Text>{selectedSpot.optimal_wind}</Card.Text>
-                <Card.Text>{selectedSpot.type}</Card.Text>
+                <Card.Text>Type of Break: {selectedSpot.type}</Card.Text>
+                <Card.Text>Best Swell Size: {selectedSpot.optimal_swell_size}</Card.Text>
+                <Card.Text>Best Swell Direction(s): {selectedSpot.optimal_swell_direction}</Card.Text>
+                <Card.Text>Best Wind Direction: {selectedSpot.optimal_wind}</Card.Text>
+                <Card.Text>Best Tide: {selectedSpot.optimal_tide}</Card.Text>
+               
+                
 
               </Card.Body>
             </Card>
