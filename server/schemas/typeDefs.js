@@ -15,29 +15,30 @@ const typeDefs = gql`
 		user: User
 	}
 
-	type Query {
-		user(name: String!): User!
-		me: User
-		location(surf_spot: String!): Location
-	}
-
+	
 	type Comment {
 		_id: ID
 		comment: String
 	}
-
+	
 	type Location {
 		_id: ID
 		surf_spot: String
-		location: String
+		city: String
 		type: String
 		optimal_swell_direction: String
 		optimal_wind: String
 		optimal_swell_size: String
 		optimal_tide: String
-		comments: [Comment]
+		#comments: [Comment]
 	}
-
+	
+	type Query {
+		user(name: String!): User!
+		me: User
+		location(surf_spot: String!): Location
+		locations: [Location]
+	}
 	type Mutation {
 		addUser(name: String!, email: String!, password: String!): Auth
 

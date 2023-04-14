@@ -26,6 +26,12 @@ const resolvers = {
 			// Added this resolver for the new 'user' field - Billy Isnt this done on line 8? -Bax - it's find all v. find one. -Billy
 			return User.findOne({ name });
 		},
+		locations: async (parent, args, context) => {
+			// if (context.user) {
+			return Location.find();
+		// }
+		// throw new AuthenticationError("You need to be logged in!");
+		},
 	},
 
 	//Defines the Mutations
@@ -81,11 +87,11 @@ const resolvers = {
 			}
 			throw new AuthenticationError("You need to be logged in!");
 		},
-		removeComment: async (parent, {locationId, comment }, context) => {
+		removeComment: async (parent, { locationId, comment }, context) => {
 			if (context.user) {
 				return Location.findOneAndUpdate(
 					{ _id: locationId }, //we may need to adjust this to context.locationId - Billy this may work now -Bax
-					{ $pull: { comments: {_id: comment }} },
+					{ $pull: { comments: { _id: comment } } },
 					{ new: true }
 				);
 			}
@@ -94,6 +100,6 @@ const resolvers = {
 	},
 };
 
-module.exports = resolvers; 
+module.exports = resolvers;
 
 
