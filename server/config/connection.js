@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 // require('dotenv').config({ path: __dirname+"/../../.env" });//comment in when seeding data
 
-console.log("Test log for URI value",process.env.MONGODB_URI)
+
 
 
 mongoose.connect(
