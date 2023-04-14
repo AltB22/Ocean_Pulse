@@ -31,16 +31,32 @@ import {useQuery} from "@apollo/client";
 import {GET_SINGLE_LOCATION} from "../../utils/queries";
 
 
-const SingleLocation = ({ locationId }) => {
-	const { loading, data } = useQuery(GET_SINGLE_LOCATION, {
-		variables: { locationId: locationId },
-	});
-
-	const location = data?.location || {};
-
-	if (loading) {
-		return <div>Loading...</div>;
-	}
+            <Row xs={1} md={2} className="g-4">
+                    <Col>
+                        <Card className="AboutLocation">
+                            <Card.Body>
+                                <Card.Title>Card title</Card.Title>
+                                <Card.Text>
+                                    This is a longer card with supporting text below as a natural
+                                    City:
+                                    longer.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col>
+                        <Card className="CurrentLocation">
+                            <Card.Body>
+                                <Card.Title>Card title</Card.Title>
+                                <Card.Text>
+                                    This is a longer card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit
+                                    longer.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+            </Row>
 
 	return (
 		<div>

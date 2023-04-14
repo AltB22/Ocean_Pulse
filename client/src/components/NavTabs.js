@@ -1,12 +1,9 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { ApolloProvider } from "@apollo/client";
-// import { client } from "../utils/client";//this might not be needed when 
-import { useQuery } from "@apollo/client";
-import { GET_LOCATIONS } from "../utils/queries";
+// import React, { createElement } from "react";
+import { NavLink } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavTabs({ currentPage, HandlePageChange }) {
 
@@ -150,6 +147,19 @@ function NavTabs({ currentPage, HandlePageChange }) {
                                 className={currentPage === "AddLocation"}
                             >Add Location</NavDropdown.Item>
                         </NavDropdown>
+
+                        <NavLink to="/login"
+                            onClick={() => HandlePageChange("Login")}
+                            className={currentPage === "Login" ? "nav-link active" : "nav-link"}
+                        >Login</NavLink>
+
+                        <NavLink to="/signup"
+                            onClick={() => HandlePageChange("Signup")}
+                            className={currentPage === "Signup" ? "nav-link active" : "nav-link"}
+                        >Signup</NavLink>
+                        
+
+
                     </Nav>
                 </Container>
             </Navbar>
