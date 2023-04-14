@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 // require('dotenv').config({ path: __dirname+"/../../.env" });//comment in when seeding data
 
-console.log("log to confirm URI", process.env.MONGODB_URI)
+console.log("Test log for URI value",process.env.MONGODB_URI)
 
 
 mongoose.connect(
@@ -10,7 +10,7 @@ mongoose.connect(
 	{
 		//may need to change some of this code
 		useNewUrlParser: true,
-		useUnifiedTopology: true,
+		// useUnifiedTopology: true,
 		// useCreateIndex: true,
 		// useFindAndModify: false
 	}
