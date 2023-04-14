@@ -6,7 +6,7 @@ import Contact from "./pages/Contact";
 import Locations from "./pages/Locations";
 import AddLocation from "./pages/AddLocation";
 // import Login from "./pages/Login;
-import Signup from "./pages/Signup";
+// import Signup from "./pages/Signup";
 
 export default function HomeContainer() {
 	const [currentPage, setCurrentPage] = useState("Home");
