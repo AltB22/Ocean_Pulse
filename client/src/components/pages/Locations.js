@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Row, Col, Dropdown } from 'react-bootstrap';
 import { useQuery } from "@apollo/client";
 import { GET_LOCATIONS } from "../../utils/queries";
-
 
 
 const styles = {
@@ -18,27 +17,20 @@ const styles = {
     },
 };
 
-//code for adding specific locations???-bax
-
-// Import the `useParams()` hook
-// import {useParams} from "react-router-dom";
-
-// import CommentForm from '../components/commentForm';
-// import {ADD_COMMENT} from "../../utils/mutations";
-// import {REMOVE_COMMENT} from "../../utils/mutations"
-// import Auth from "../../utils/auth";
-
 
 const Locations = () => {
     const { loading, data } = useQuery(GET_LOCATIONS);
     
     const locationData = data?.locations || [];
     const [selectedSpot, setSelectedSpot] = useState(null);
+    // const [currentConditions, setCurrentConditions] = useState(null);
 
     const handleDropdownSelect = (eventKey) => {
-      setSelectedSpot(locationData[eventKey]);
+     setSelectedSpot(locationData[eventKey]);
 
-    };
+    
+  
+  }
 
     return (
 
@@ -72,20 +64,14 @@ const Locations = () => {
                 <Card.Text>Best Wind Direction: {selectedSpot.optimal_wind}</Card.Text>
                 <Card.Text>Best Tide: {selectedSpot.optimal_tide}</Card.Text>
                
-                
-
               </Card.Body>
             </Card>
           </Col>
           <Col>
-            <Card className="CurrentLocation">
+            <Card className="CurrentConditions">
               <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </Card.Text>
+                <Card.Title>Current Swell & Wind Conditions</Card.Title>
+                <Card.Text> {selectedSpot.surf_spot}</Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -93,6 +79,6 @@ const Locations = () => {
       )}
     </div>
   );
-};
+            }
 
 export default Locations;
