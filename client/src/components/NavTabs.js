@@ -139,29 +139,24 @@ function NavTabs({ currentPage, HandlePageChange }) {
 								Contact
 							</Nav.Link>
 
-							<NavLink
-								to="/login"
-								onClick={() => HandlePageChange("Login")}
-								className={
-									currentPage === "Login" ? "nav-link active" : "nav-link"
-								}>
-								Login
-							</NavLink>
+                        <NavLink to="/login"
+                            onClick={() => HandlePageChange("Login")}
+                            className={currentPage === "Login" ? "nav-link active" : "nav-link"}
+                        >Login</NavLink>
 
-							<NavLink
-								to="/signup"
-								onClick={() => HandlePageChange("Signup")}
-								className={
-									currentPage === "Signup" ? "nav-link active" : "nav-link"
-								}>
-								Signup
-							</NavLink>
-						</Nav>
-					</Container>
-				</Navbar>
-			</>
-		);
-	}
+                        <NavLink to="/signup"
+                            onClick={() => HandlePageChange("Signup")}
+                            className={currentPage === "Signup" ? "nav-link active" : "nav-link"}
+                        >Signup</NavLink>
+
+
+
+                    </Nav>
+                </Container>
+            </Navbar>
+        </>
+
+    );
 }
 
 export default NavTabs;
