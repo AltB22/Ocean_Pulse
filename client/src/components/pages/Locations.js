@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Row, Col, Dropdown } from 'react-bootstrap';
 import { useQuery } from "@apollo/client";
 import { GET_LOCATIONS } from "../../utils/queries";
@@ -18,8 +18,6 @@ const styles = {
     },
 };
 
-
-
 //code for adding specific locations???-bax
 
 // Import the `useParams()` hook
@@ -32,63 +30,69 @@ const styles = {
 
 
 const Locations = () => {
-    const { loading, data } = useQuery(GET_LOCATIONS)
+    const { loading, data } = useQuery(GET_LOCATIONS);
+    
+    const locationData = data?.locations || [];
+    const [selectedSpot, setSelectedSpot] = useState(null);
 
-    const locationData = data?.locations || []
-    console.log(locationData);//= what is in the database
+    const handleDropdownSelect = (eventKey) => {
+      setSelectedSpot(locationData[eventKey]);
+
+    };
 
     return (
 
         <div className="Location">
             {/* create a dropdown in jsx with the data from locationData.surf_spot */}
-            <Dropdown>
+            <Dropdown onSelect={handleDropdownSelect}>
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                     Search Locations
                 </Dropdown.Toggle>
+                {/* {data && data.location && data.location.surf_spot && <h2>{data.location.surf_spot}</h2>} */}
 
                 <Dropdown.Menu>
-                   {locationData.map((item, i)=>(
-                     <Dropdown.Item href="#/action-1" key={i}>
-                        {item.surf_spot}
+                   {locationData.map((spot, i)=>(
+                     <Dropdown.Item href="#/action-1" key={i} eventKey={i}>
+                        {spot?.surf_spot}
                      </Dropdown.Item>
                    ))}
                 </Dropdown.Menu>
             </Dropdown>
+            
+            <h1 style={styles.heading} >{selectedSpot?.surf_spot}</h1>
+            {selectedSpot && (
+        <Row xs={1} md={2} className="g-4">
+          <Col>
+            <Card className="AboutLocation">
+              <Card.Body>
+                <Card.Title>About {selectedSpot.surf_spot}</Card.Title>
+                <Card.Text>Type of Break: {selectedSpot.type}</Card.Text>
+                <Card.Text>Best Swell Size: {selectedSpot.optimal_swell_size}</Card.Text>
+                <Card.Text>Best Swell Direction(s): {selectedSpot.optimal_swell_direction}</Card.Text>
+                <Card.Text>Best Wind Direction: {selectedSpot.optimal_wind}</Card.Text>
+                <Card.Text>Best Tide: {selectedSpot.optimal_tide}</Card.Text>
+               
+                
 
-            <h1 style={styles.heading}>Surf-Location</h1>
-
-
-            <Row xs={1} md={2} className="g-4">
-                <Col>
-                    <Card className="AboutLocation">
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                          
-
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card className="CurrentLocation">
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a longer card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit
-                                longer.
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-
-        </div>
-    );
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card className="CurrentLocation">
+              <Card.Body>
+                <Card.Title>Card title</Card.Title>
+                <Card.Text>
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      )}
+    </div>
+  );
 };
 
 export default Locations;
-
-
-// {locationData.location.surf_spot}
