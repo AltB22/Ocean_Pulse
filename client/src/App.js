@@ -1,43 +1,55 @@
-import React from 'react';
+import React, { useState } from "react";
 import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-import HomeContainer from './components/HomeContainer';
-import './App.css'
+	ApolloClient,
+	InMemoryCache,
+	ApolloProvider,
+	createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+import HomeContainer from "./components/HomeContainer";
+import Login from "./components/pages/login";
+import Signup from "./components/pages/Signup";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+	uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
-  const token = localStorage.getItem('id_token');
-  // return the headers to the context so httpLink can read them
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
+	// get the authentication token from local storage if it exists
+	const token = localStorage.getItem("id_token");
+	// return the headers to the context so httpLink can read them
+	return {
+		headers: {
+			...headers,
+			authorization: token ? `Bearer ${token}` : "",
+		},
+	};
 });
 
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+	link: authLink.concat(httpLink),
+	cache: new InMemoryCache(),
 });
 
 function App() {
-  return (
-    <ApolloProvider client={client}>
-      <div className="App">
-        <HomeContainer />
-      </div>
-    </ApolloProvider>
-  );
+	const [showLogin, setShowLogin] = useState(false);
+	const [showSignup, setShowSignup] = useState(false);
+
+	const handleLoginClick = () => {
+		setShowLogin(true);
+	};
+
+	const handleSignupClick = () => {
+		setShowSignup(true);
+	};
+
+	return (
+		<ApolloProvider client={client}>
+			<div className="App">
+				<HomeContainer />
+			</div>
+		</ApolloProvider>
+	);
 }
 
 export default App;
