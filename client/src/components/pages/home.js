@@ -126,8 +126,8 @@ const Home = () => {
             <Card.Img variant="down" src={Safety} height="275px" width="100%" />
             <Card.Body className="Info">
               <Card.Title>Surf Tips</Card.Title>
-              <Card.Text>
-                <ul>
+                <span>
+                 <ul>
                   <li>Always surf with a buddy.</li>
                   <li>Never surf alone.</li>
                   <li>Always wear a leash.</li>
@@ -135,11 +135,9 @@ const Home = () => {
                   <li>Always wear a wetsuit.</li>
                   <li>Always wear a rash guard.</li>
                 </ul>
-                <div>
-                  <p>- For more Instructions access the link below!!!</p>
-                  <a href="https://www.academyofsurfing.com/sports/surfing/learn-to-surf/surfing-safety">Surf Safety Tips</a>
-                </div>
-              </Card.Text>
+                <p>- For more Instructions access the link below!!!</p>
+                <a href="https://www.academyofsurfing.com/sports/surfing/learn-to-surf/surfing-safety">Surf Safety Tips</a> 
+                </span>
             </Card.Body>
           </Row>
         </Container>
