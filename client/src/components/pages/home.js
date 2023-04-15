@@ -127,21 +127,25 @@ const Home = () => {
             <Card.Body className="Info">
               <Card.Title>Surf Tips</Card.Title>
               <Card.Text>
-              <ul>
-                <li>Always surf with a buddy.</li>
-                <li>Never surf alone.</li>
-                <li>Always wear a leash.</li>
-                <li>Always wear a life jacket.</li>
-                <li>Always wear a wetsuit.</li>
-                <li>Always wear a rash guard.</li>
-              </ul>
-              <p>- For more Instructions access the link below!!!</p>
-                <a href="https://www.academyofsurfing.com/sports/surfing/learn-to-surf/surfing-safety">Surf Safety Tips</a>
+                <ul>
+                  <li>Always surf with a buddy.</li>
+                  <li>Never surf alone.</li>
+                  <li>Always wear a leash.</li>
+                  <li>Always wear a life jacket.</li>
+                  <li>Always wear a wetsuit.</li>
+                  <li>Always wear a rash guard.</li>
+                </ul>
+                <div>
+                  <p>- For more Instructions access the link below!!!</p>
+                  <a href="https://www.academyofsurfing.com/sports/surfing/learn-to-surf/surfing-safety">Surf Safety Tips</a>
+                </div>
               </Card.Text>
             </Card.Body>
           </Row>
         </Container>
       </section>
+      <footer className="footer">
+      </footer>
 
     </>
   )
