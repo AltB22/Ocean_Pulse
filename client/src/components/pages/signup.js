@@ -1,89 +1,89 @@
-// import React, { useState } from "react";
-// import { Form, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 
-// import { useMutation } from '@apollo/client';
-// import { ADD_USER } from '../../utils/mutations';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../../utils/mutations';
 
-// import Auth from '../../utils/auth';
+import Auth from '../../utils/auth';
 
-// const Signup = () => {
-//     const [formState, setFormState] = useState({
-//         name: '',
-//         email: '',
-//         password: '',
-//     });
-//     const [addUser, { error, data }] = useMutation(ADD_USER);
+const Signup = () => {
+    const [formState, setFormState] = useState({
+        name: '',
+        email: '',
+        password: '',
+    });
+    const [addUser, { error, data }] = useMutation(ADD_USER);
 
-//     // update state based on form input changes
-//     const handleChange = (event) => {
-//         const { name, value } = event.target;
+    // update state based on form input changes
+    const handleChange = (event) => {
+        const { name, value } = event.target;
 
-//         setFormState({
-//             ...formState,
-//             [name]: value,
-//         });
-//     };
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
+    };
 
-//     // submit form
-//     const handleFormSubmit = async (event) => {
-//         event.preventDefault();
-//         console.log(formState);
+    // submit form
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        console.log(formState);
     
 
-//         try {
-//             const { data } = await addUser({
-//                 variables: { ...formState },
-//             });
+        try {
+            const { data } = await addUser({
+                variables: { ...formState },
+            });
 
-//             Auth.login(data.addUser.token);
-//         } catch (e) {
-//             console.error(e);
-//         }
-//     };
+            Auth.login(data.addUser.token);
+        } catch (e) {
+            console.error(e);
+        }
+    };
 
-//     return (
-//         <Form onSubmit={handleFormSubmit}>
-//             <Form.Group controlId="formBasicName">
-//                 <Form.Label>Name</Form.Label>
-//                 <Form.Control
-//                     type="text"
-//                     placeholder="Enter name"
-//                     name="name"
-//                     value={formState.name}
-//                     onChange={handleChange}
-//                     required
-//                 />
-//             </Form.Group>
+    return (
+        <Form onSubmit={handleFormSubmit}>
+            <Form.Group controlId="formBasicName">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
+                    type="text"
+                    placeholder="Enter name"
+                    name="name"
+                    value={formState.name}
+                    onChange={handleChange}
+                    required
+                />
+            </Form.Group>
 
-//             <Form.Group controlId="formBasicEmail">
-//                 <Form.Label>Email address</Form.Label>
-//                 <Form.Control
-//                     placeholder="Enter email"
-//                     name="email"
-//                     type="email"
-//                     value={formState.email}
-//                     onChange={handleChange}
-//                     required
-//                 />
-//             </Form.Group>
+            <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                    placeholder="Enter email"
+                    name="email"
+                    type="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                    required
+                />
+            </Form.Group>
 
-//             <Form.Group controlId="formBasicPassword">
-//                 <Form.Label>Password</Form.Label>
-//                 <Form.Control
-//                     name="password"
-//                     type="password"
-//                     placeholder="Password"
-//                     value={formState.password}
-//                     onChange={handleChange}
-//                     required
-//                 />
-//             </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    value={formState.password}
+                    onChange={handleChange}
+                    required
+                />
+            </Form.Group>
 
-//             <Button variant="primary" type="submit">
-//                 Sign In
-//             </Button>
-//         </Form>
-//     );
-// }
+            <Button variant="primary" type="submit">
+                Sign In
+            </Button>
+        </Form>
+    );
+}
 
-// export default Signup;
+export default Signup;

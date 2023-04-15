@@ -40,7 +40,7 @@ function NavTabs({ currentPage, HandlePageChange }) {
                             >Add Location</NavDropdown.Item>
                         </NavDropdown> */}
 
-                        {/* <NavLink to="/login"
+                        <NavLink to="/login"
                             onClick={() => HandlePageChange("Login")}
                             className={currentPage === "Login" ? "nav-link active" : "nav-link"}
                         >Login</NavLink>
@@ -48,7 +48,7 @@ function NavTabs({ currentPage, HandlePageChange }) {
                         <NavLink to="/signup"
                             onClick={() => HandlePageChange("Signup")}
                             className={currentPage === "Signup" ? "nav-link active" : "nav-link"}
-                        >Signup</NavLink> */}
+                        >Signup</NavLink>
 
 
 
