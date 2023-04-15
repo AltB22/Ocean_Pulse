@@ -36,7 +36,7 @@ function NavTabs({ currentPage, HandlePageChange }) {
 	//       table.innerHTML = ""; // Clear existing data
 	//       data.forEach(item => {
 	//         const row = table.insertRow();
-	//         row.insertCell(0).innerHTML = item.name;
+	//         row.insertCell(0).innerHTML = item.username;
 	//         row.insertCell(1).innerHTML = item.address;
 	//         // etc.
 	//       });
