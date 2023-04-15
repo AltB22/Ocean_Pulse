@@ -16,7 +16,7 @@ const Home = () => {
     <>
       <div className="Main" >
         <h1>The Ocean Pulse</h1>
-        <p > - The Ocean Pulse is a website about the ocean and surfing places to go with your family or friends, also have an awesome day enjoying the beauties of nature!!</p>
+        <p > - The Ocean Pulse is a website dedicated to the ocean and surf spots along the California coast to visit with your family and friends.  Have an awesome day enjoying the beauty of nature!!</p>
  <Carousel>
           <Carousel.Item>
             <img

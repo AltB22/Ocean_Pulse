@@ -1,6 +1,6 @@
-// const searchSurfForecastButton = document.getElementById("search-by-city-button");//search button
-// const clearCityHistoryButton = document.getElementById("clear-history-btn");//currently not used
-// const currentSurfReportElement = document.getElementById("current-surf-report");//element to house api data
+// // // const searchSurfForecastButton = document.getElementById("search-by-city-button");//search button
+// // // const clearCityHistoryButton = document.getElementById("clear-history-btn");//currently not used
+// // // const currentSurfReportElement = document.getElementById("current-surf-report");//element to house api data
 // const timeStamp = new Date().getTime();//included this in case we want to create unique api fetch ids
 // let surfSpot = "";//defining surfSpot as empty string
 // let lat = 0;//defining latitude as number 0
@@ -8,9 +8,9 @@
 // let params = "swellHeight,swellPeriod,swellDirection,windSpeed,windDirection";//data fields to be returned from stormglass api fetch
 // let source = "noaa";//source of data @ stormglass.  There are several options but I'm familiar with NOAA (National Oceanographic & Atmospheric Admin.)
 // // let currentSurfSpot = ""; 
-// // let cityHistoryArr = [];
+// // // let cityHistoryArr = [];
 
-// //define ranges within the numerical points of the compass as the 16 cardinal compass directions (N, NNW, NW, WWW, W, etc...)
+// // //define ranges within the numerical points of the compass as the 16 cardinal compass directions (N, NNW, NW, WWW, W, etc...)
 // function getCardinalDirection(degrees) {
 //     const degreeRanges = [
 //         { direction: "N", range: [0, 11.25] },
@@ -40,10 +40,12 @@
 //     return "N"; // default direction if degrees is not within any of the defined ranges
 // }
 
-// function handleSearchButton(event) {
-//     event.preventDefault();
+// export const getSurfConditions = (surfSpot) => {
 
-//     surfSpot = document.getElementById("searched-city-input").value;
+// // function handleSearchButton(event) {
+// //     event.preventDefault();
+
+//     // surfSpot = document.getElementById("searched-city-input").value;
 
 //     // Hardcoding the names and coordinates is def not an ideal solution.  However, because this is not part of the MVP I didn't want to spend any additional time on this nice to have accessory API call.  Better to focus efforts on hitting the actual criteria.
 
@@ -64,11 +66,11 @@
 //                 case "Other Surf Spots here":
 //                 getSurfReport(surfSpot, 37.9226, -122.7399);
 //                 break;
-//                 case "Add a New Spot"://
-//                 addNewSpot(params, here);
-//                 break;
+//                 // case "Add a New Spot"://
+//                 // addNewSpot(params, here);
+//                 // break;
 //             default:
-//                 prompt("Invalid surf spot name");
+//                 prompt("Report Unavailable");
 //         }
 //     } else {
 //         prompt("Surf spot search field required");
@@ -111,12 +113,13 @@
 //       <p>Swell Direction (of origin): ${getCardinalDirection(currentSwellDirection)}</p>
 //       <p>Wind: ${currentWindSpeed} mph from the ${getCardinalDirection(currentWindDirection)}</p>`
 
-//         currentSurfReportElement.innerHTML = currentSurfReportHTML;
-//     } else {
-//         currentSurfReportElement.innerHTML = "No surf report available";
-//     }
+//     //     currentSurfReportElement.innerHTML = currentSurfReportHTML;
+//     // } else {
+//     //     currentSurfReportElement.innerHTML = "No surf report available";
+//     // }
 // }
 
-// searchSurfForecastButton.addEventListener("click", handleSearchButton);
+// // searchSurfForecastButton.addEventListener("click", handleSearchButton);
 
-
+// };
+// // }
