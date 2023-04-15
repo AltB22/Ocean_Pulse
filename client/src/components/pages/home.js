@@ -142,9 +142,13 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-      <footer className="footer">
+      <footer className="Footer">
+        <p>Made by William, James, Vinni & Beau ✨✨</p>
+        <a href="https://github.com/AltB22/Ocean_Pulse.git">GitHub</a>
+        <div className="footer-text">
+          <p>© 2023 The Ocean Pulse</p>
+        </div>
       </footer>
-
     </>
   )
 }
