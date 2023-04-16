@@ -1,70 +1,98 @@
-# Ocean_Pulse
+# The-Ocean-Pulse: Break Finder
 
-Project Requirements
-With your group, you’ll again conceive and execute a design that solves a real-world problem. In creating your first collaborative MERN-stack single-page application, you’ll combine a scalable MongoDB back end, a GraphQL API, and an Express.js and Node.js server with a React front end, implementing user authentication with JWT to build a user-focused platform. You’ll continue to build on the agile development methodologies you’ve used throughout this course. These include storing your project code in GitHub, managing your work with a project management tool, and implementing feature and bug fixes using the Git branch workflow and pull requests.
+## Table of Contents:
 
-For this project, you should start from scratch. Doing so will allow you to revisit your front-end abilities in the context of React and solidify your understanding of working with multiple servers in a MERN application. Your skills have continued to improve since the first two projects, so naturally your approach will be different considering the experience you’ve gained with each new application you’ve built.
+- [Description](#description)
+- [Usage](#usage)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [Testing](#testing)
+- [Mockup](#mockup)
+- [Credits](#credits)
+- [License](#license)
 
-Your group will use everything you’ve learned throughout this course to create a MERN-stack single-page application that works with real-world data to solve a real-world challenge, with a focus on data and user demand. This project will provide you with the best opportunity to demonstrate your problem-solving skills, which employers will want to observe. Once again, the user story and acceptance criteria will depend on the project that you create, but your project must fulfill the following requirements:
+## Description
 
-Use React for the front end.
+This project was the creation of a full stack website that utilizes specific technologies to render a workable and polished website that responds to a real world problem with a intuitive solution. <br>
+The Website functionality allows a user to view API data on surfing locations thought the Bay Area and California. The website utilized express.js and Node.js to render the Routes functionality of the pages. It also utilizes sequelize and MYSQL to render the API created API information. Finally, the website utilized Bootstrap 5.3 and Handlebars to render the front end of the website. A user API as well as a surf locations API were created to allow the the use of databases through router.get and router.put aspects.
 
-Use GraphQL with a Node.js and Express.js server.
+## Usage
 
-Use MongoDB and the Mongoose ODM for the database.
+As a User, I want to be able to view the most righteous surf spots on the "Best" Coast So that I can find the ultimate wave. I also want to let the World know about my sweet secret surf spot so that others can share those sick waves by posting my own surfing locations and having them put on the website.
 
-Use queries and mutations for retrieving, adding, updating, and deleting data.
+## Acceptance Criteria
 
-Be deployed using Heroku (with data).
+GIVEN a surf website that I'm able to find the best surf spots on the best coast<br>
+WHEN I open the website<br>
+THEN I am landed on the home page with the option to login or signup.<br>
+WHEN I click the signup option<br>
+THEN I am taken to the signup page and allowed to enter my information.<br>
+WHEN i enter that information<br>
+THEN i am taken to the login page where I can renter my information and sign up.<br>
+When I am logged in<br>
+THEN I can select the locations page and view the API of provided surf locations and its details.<br>
+WHEN I click the "add location" button<br>
+THEN I am taken to a page where I can create my own surf location with details<br>
+WHEN I submit that location<br>
+THEN the new location will be rendered onto the locations page with the rest of the data.<br>
+WHEN I click the logout button<br>
+THEN I will be logged out and will no longer be able to see the locations page.<br>
 
-Have a polished UI.
+## Installation
 
-Be responsive.
+A user would first need to initialize the package.json file by entering <b>npm instal</b> in the terminal. This will add the required modules for the functionality of the website.<br>
 
-Be interactive (i.e., accept and respond to user input).
+A user would first need to initiate the SQL aspects of the page though the terminal. The user should simply log into their MySQL through <b>MySQL -uroot -p</b> and enter their information. Once logged in, the user should initiate the SQL by entering <b>SOURCE ./db/schema.sql</b>. <br>
 
-Include authentication (JWT).
+Next the user would need to enter the provided seeds into the databases. This is done by entering <b>npm run seed</b> in the terminal. This will fill the created databases with the seeded information and allow for the user to log in and see provided surf locations.
 
-Protect sensitive API key information on the server.
+## Usage
 
-Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, and so on).
+This project can be initiated by entering by first logging in with an email and password, or signing up with a name, email, and password and then logging in with the newly created login. Once a user is logged in, they can progress to the locations page and viewing the provided surfing spots. The user can then click the add location button and render the add location page. The user will then enter in the required information and submit it. The user will then see the new information rendered on the locations page. The user may also logout and end the session at any time by selecting the logout button.
 
-Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+## Contribution
 
-CSS Styling
-Instead of using a CSS library like Bootstrap, consider one of the following suggestions:
+## Testing
 
-Explore the concept of CSS-in-JS, which abstracts CSS to the component level, using JavaScript to describe styles in a declarative and maintainable way. Some popular libraries include styled-componentsLinks to an external site. and EmotionLinks to an external site..
+No testing was utilized for this project
 
-Try using a component library, such as Semantic UILinks to an external site., Chakra UILinks to an external site., or Ant DesignLinks to an external site..
+## Mockup
 
-Create all the CSS for your application just using CSS.
+![Alt text](./public/css/assets/Screen%20Shot%202023-02-19%20at%204.08.58%20PM.png)
 
-Ultimately, it doesn't matter which of these options you choose—it just needs to look professional and be mobile-friendly.
+## Credits
 
-Payment Platform
-Consider integrating the Stripe payment platform. Even if you don’t create an e-commerce application, you could set up your site to accept charitable donations.
+### Team Members:
 
-Bonus
-Although this is not a requirement for your project, try to also implement functionality to meet the minimum requirements of a PWA:
+- James Baxley | Github: [Kaneknah](https://github.com/Kaneknah)
+- Vinícius Teixeira | [Vinni99](https://github.com/Vinni99)
+- William Massie | [AltB22](https://github.com/AltB22)
+- Beau Ben-Rhouma | Github: [BRhouma](https://github.com/BRhouma)
 
-Uses a web manifest.
+### Technologies utilized:
 
-Uses a service worker for offline functionality.
+#### Front End
 
-Is installable.
+-Bootstrap 5.3<br>
+-Handlebars<br>
 
-Presentation Requirements
-Use this project presentation templateLinks to an external site. to address the following:
+#### Back End
 
-Elevator pitch: A one-minute description of your application.
+-Node.js<br>
+-Express.js<br>
+-Sequelize<br>
+-MySQL<br>
 
-Concept: What is your user story? What was your motivation for development?
+#### code creation
 
-Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
+-Heroku<br>
+-Insomnia<br>
+-VS Code<br>
 
-Demo: Show your stuff!
+### GitHub Link: <https://github.com/Vinni99/The-Ocean-Pulse.git>
 
-Directions for future development.
+## License
 
-Links to the deployed application and the GitHub repository. Use the Guide to Deploy with Heroku and MongoDB Atlas on the Full-Stack BlogLinks to an external site. if you need a reminder on how to deploy to Heroku.
+N/A
