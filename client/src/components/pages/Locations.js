@@ -17,19 +17,50 @@ const styles = {
     },
 };
 
+const getCurrentConditions = (selectedSpot) => {
+  switch (selectedSpot.surf_spot) {
+    case 'Ocean Beach':
+      getSurfReport(selectedSpot.surf_spot, 37.75545, -122.5292);
+     break;
+    default:
+      return 'No current conditions available.';
+  }
+};
 
+async function getSurfReport(selectedSpot,lat,lng) {//function that accepts the 3 parameters from above and fetches data based on their values (lat & lng are the functionals here) plus other defined vars params & source
+ 
+  let params = "swellHeight,swellPeriod,swellDirection,windSpeed,windDirection";
+  const response = await fetch(
+      `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&source=noaa`,
+
+      {
+          headers: {
+              Authorization:
+                  "5c5365e4-a940-11ed-a138-0242ac130002-5c53665c-a940-11ed-a138-0242ac130002",//API key
+          },
+      }
+  );
+
+  const surfReport = await response.json();//defining api response as json object
+  console.log(surfReport)
+  // currentSurfSpot = surfSpot; // Assign the value of surfSpot to currentSurfSpot
+  // renderSurfForecast(surfReport);//passes data to renderSurfForecast
+  return surfReport;
+}
 const Locations = () => {
     const { loading, data } = useQuery(GET_LOCATIONS);
-    
+
     const locationData = data?.locations || [];
     const [selectedSpot, setSelectedSpot] = useState(null);
     // const [currentConditions, setCurrentConditions] = useState(null);
 
     const handleDropdownSelect = (eventKey) => {
-     setSelectedSpot(locationData[eventKey]);
 
+     setSelectedSpot(locationData[eventKey]);
+      // console.log(selectedSpot.city);
+      // setCurrentConditions([locationData.city]);
     
-  
+    
   }
 
     return (
@@ -71,7 +102,8 @@ const Locations = () => {
             <Card className="CurrentConditions">
               <Card.Body>
                 <Card.Title>Current Swell & Wind Conditions</Card.Title>
-                <Card.Text> {selectedSpot.surf_spot}</Card.Text>
+                <Card.Text>{getCurrentConditions(selectedSpot)}</Card.Text>
+                {/* <Card.Text> {selectedSpot.surf_spot}</Card.Text> */}
               </Card.Body>
             </Card>
           </Col>
