@@ -1,6 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Comment, Location } = require("../models");
-const { signToken } = require("../../client/src/utils/auth");
+const { signToken } = require("../utils/auth");
 
 //defines the resolvers
 const resolvers = {
@@ -22,9 +22,9 @@ const resolvers = {
 		location: async (parent, { surf_spot }) => {
 			return Location.findOne({ surf_spot });
 		},
-		user: async (parent, { name }) => {
+		user: async (parent, { username }) => {
 			// Added this resolver for the new 'user' field - Billy Isnt this done on line 8? -Bax - it's find all v. find one. -Billy
-			return User.findOne({ name });
+			return User.findOne({ username });
 		},
 		locations: async (parent, args, context) => {
 			// if (context.user) {
@@ -38,8 +38,8 @@ const resolvers = {
 	//Mutations are like post, put, & delelte routes.  It is itself an object that contains multiple resolvers for modifying data on the server.
 
 	Mutation: {
-		addUser: async (parent, { name, email, password }) => {
-			const user = await User.create({ name, email, password });
+		addUser: async (parent, { username, email, password }) => {
+			const user = await User.create({ username, email, password });
 			const token = signToken(user);
 			return { token, user };
 		},
