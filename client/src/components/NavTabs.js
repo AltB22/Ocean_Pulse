@@ -99,7 +99,7 @@ function NavTabs({ currentPage, HandlePageChange }) {
 							</Nav.Link>
 
 							<NavLink
-								to="/login"
+								to="#login"
 								onClick={() => HandlePageChange("Login")}
 								className={
 									currentPage === "Login" ? "nav-link active" : "nav-link"
@@ -108,7 +108,7 @@ function NavTabs({ currentPage, HandlePageChange }) {
 							</NavLink>
 
 							<NavLink
-								to="/signup"
+								to="#signup"
 								onClick={() => HandlePageChange("Signup")}
 								className={
 									currentPage === "Signup" ? "nav-link active" : "nav-link"
