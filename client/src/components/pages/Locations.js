@@ -29,8 +29,8 @@ const Locations = () => {
     const GetCurrentConditions = async (selectedSpot) => {
       switch (selectedSpot?.surf_spot) {
         case 'Ocean Beach':
-          let lat = 1
-          let lng = 1
+          let lat = 37.75545
+          let lng = -122.5292
           const surfReport = await GetSurfReport(selectedSpot.surf_spot, lat, lng);
 
           setCurrentConditions(surfReport);
@@ -51,22 +51,22 @@ const Locations = () => {
     
   }
   useEffect(() => {
-    console.log(currentConditions);
+    // console.log(currentConditions);
   }, [currentConditions]);
 
   async function GetSurfReport(selectedSpot, lat, lng) {//function that accepts the 3 parameters from above and fetches data based on their values (lat & lng are the functionals here) plus other defined vars params & source
-    if (selectedSpot === "Ocean Beach") {
-      lat = 37.75545
-      lng = -122.5292
-    }
-    if (!lat || !lng) {
-      console.error("Lat and lng must be defined to fetch surf report.");
-      return;
-    }
-    let params = "swellHeight,swellPeriod,swellDirection,windSpeed,windDirection";
-    let source = "noaa"
+    // if (selectedSpot === "Ocean Beach") {
+    //   // lat = 37.75545
+    //   // lng = -122.5292
+    // }
+    // if (!lat || !lng) {
+    //   console.error("Lat and lng must be defined to fetch surf report.");
+    //   return;
+    // }
+    // let params = "swellHeight,swellPeriod,swellDirection,windSpeed,windDirection";
+    // let source = "noaa
     const response = await fetch(
-      `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&source=${source}`,
+      `https://api.stormglass.io/v2/weather/point?lat=37.75545&lng=-122.5292&params=swellHeight,swellPeriod,swellDirection,windSpeed,windDirection&source=noaa`,
 
       {
         headers: {
@@ -78,15 +78,12 @@ const Locations = () => {
 
     const surfReport = await response.json();//defining api response as json object
     const surfReportArr = [surfReport.hours] || []
-    console.log([surfReportArr])
+    console.log(surfReportArr)
     //  const surfReportArr = [surfReport]
 
     return surfReportArr;
 
   }
-
-
-
 
   // console.log(surfReportArr)
   // // currentSurfSpot = surfSpot; // Assign the value of surfSpot to currentSurfSpot
