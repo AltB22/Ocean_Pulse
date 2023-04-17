@@ -5,29 +5,29 @@ import { GET_LOCATIONS } from "../../utils/queries";
 
 function getCardinalDirection(degrees) {
   const degreeRanges = [
-      { direction: "N", range: [0, 11.25] },
-      { direction: "NNE", range: [11.25, 33.75] },
-      { direction: "NE", range: [33.75, 56.25] },
-      { direction: "ENE", range: [56.25, 78.75] },
-      { direction: "E", range: [78.75, 101.25] },
-      { direction: "ESE", range: [101.25, 123.75] },
-      { direction: "SE", range: [123.75, 146.25] },
-      { direction: "SSE", range: [146.25, 168.75] },
-      { direction: "S", range: [168.75, 191.25] },
-      { direction: "SSW", range: [191.25, 213.75] },
-      { direction: "SW", range: [213.75, 236.25] },
-      { direction: "WSW", range: [236.25, 258.75] },
-      { direction: "W", range: [258.75, 281.25] },
-      { direction: "WNW", range: [281.25, 303.75] },
-      { direction: "NW", range: [303.75, 326.25] },
-      { direction: "NNW", range: [326.25, 348.75] },
-      { direction: "N", range: [348.75, 360] },
+    { direction: "N", range: [0, 11.25] },
+    { direction: "NNE", range: [11.25, 33.75] },
+    { direction: "NE", range: [33.75, 56.25] },
+    { direction: "ENE", range: [56.25, 78.75] },
+    { direction: "E", range: [78.75, 101.25] },
+    { direction: "ESE", range: [101.25, 123.75] },
+    { direction: "SE", range: [123.75, 146.25] },
+    { direction: "SSE", range: [146.25, 168.75] },
+    { direction: "S", range: [168.75, 191.25] },
+    { direction: "SSW", range: [191.25, 213.75] },
+    { direction: "SW", range: [213.75, 236.25] },
+    { direction: "WSW", range: [236.25, 258.75] },
+    { direction: "W", range: [258.75, 281.25] },
+    { direction: "WNW", range: [281.25, 303.75] },
+    { direction: "NW", range: [303.75, 326.25] },
+    { direction: "NNW", range: [326.25, 348.75] },
+    { direction: "N", range: [348.75, 360] },
   ];
 
   for (let i = 0; i < degreeRanges.length; i++) {
-      if (degrees >= degreeRanges[i].range[0] && degrees < degreeRanges[i].range[1]) {
-          return degreeRanges[i].direction;
-      }
+    if (degrees >= degreeRanges[i].range[0] && degrees < degreeRanges[i].range[1]) {
+      return degreeRanges[i].direction;
+    }
   }
   return "N"; // default direction if degrees is not within any of the defined ranges
 }
@@ -50,38 +50,14 @@ const Locations = () => {
 
   const locationData = data?.locations || [];
   const [selectedSpot, setSelectedSpot] = useState('');
-  // const [currentConditions, setCurrentConditions] = useState(null);
   const [arr, setArr] = useState([])
-  // const [defaultConst, defaultCase] = useState(null)
-
-
-  // useEffect(() => {
-  //   const GetCurrentConditions = async (selectedSpot) => {
-  //     switch (selectedSpot?.surf_spot) {
-  //       case '':
-  //         let lat = 0
-  //         let lng = 0
-  //         const currentReport = await GetSurfReport(selectedSpot.surf_spot, lat, lng);
-
-  //         setCurrentConditions(currentReport);
-  //         break;
-  //       default:
-  //         setCurrentConditions("No conditions available");
-  //     }
-  //   };
-
-  //   GetCurrentConditions(selectedSpot);
-  // }, [selectedSpot]);
 
   const handleDropdownSelect = async (e) => {
     const filteredLocationData = locationData.filter((location) => location.surf_spot === e)
     console.log(filteredLocationData[0])
     // const selectedSpot = locationData[eventKey];
     setSelectedSpot(filteredLocationData[0]);
-
-
   }
-
 
   useEffect(() => {
     let lat = 0;
@@ -90,6 +66,83 @@ const Locations = () => {
       lat = 37.75545
       lon = -122.5292
     }
+    if (selectedSpot === "Mavericks") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Malibu") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "The Wedge") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Pismo Beach Pier") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Rincon") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Huntington Beach Pier") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "San Onofre Beach") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Asilomar Beach") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Cardiff Reef") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Oceanside Pier") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Doheny Beach") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Lower Trestles") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Blacks Beach") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Windandsea Beach") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Swamis") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Steamer Lane") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Pleasure Point") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Ventura Point") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    if (selectedSpot === "Pacifica / Linda Mar Beach") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    
     let params = "swellHeight,swellPeriod,swellDirection,windSpeed,windDirection";
     let source = "noaa";
     // GetSurfReport(selectedSpot.surf_spot, selectedSpot.lat, selectedSpot.lng);
@@ -102,47 +155,13 @@ const Locations = () => {
       }).then((response) => {
         return response.json()
       }).then((data) => {
-        console.log(data.hours[0].swellHeight.noaa)
-       setArr(data.hours)
+        // console.log(data.hours[0].swellHeight.noaa)
+        setArr(data.hours)
       })
 
   }, [selectedSpot]);
 
-
-  // async function GetSurfReport(selectedSpot, lat, lng) {//function that accepts the 3 parameters from above and fetches data based on their values (lat & lng are the functionals here) plus other defined vars params & source
-  //   if (!lat || !lng) {
-  //     console.error("Lat and lng must be defined to fetch surf report.");
-  //     return;
-  //   }
-  //   const response = await fetch(
-  //     `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&source=${source}`,
-
-  //     {
-  //       headers: {
-  //         Authorization:
-  //           "5c5365e4-a940-11ed-a138-0242ac130002-5c53665c-a940-11ed-a138-0242ac130002",//API key
-  //       },
-  //     }
-  //   );
-
-  //   const surfReport = await response.json();//defining api response as json object
-  //   console.log(arr)
-  //   await setArr(surfReport.hours)
-  //   //  const surfReportArr = [surfReport]
-
-  //   // return surfReportArr;
-
-  // }
-
-  console.log(arr)
-  // // currentSurfSpot = surfSpot; // Assign the value of surfSpot to currentSurfSpot
-  // // setCurrentConditions(surfReport);//passes data to renderSurfForecast
-  // return surfReportArr;
-
-
-
-
-
+  // console.log(arr)
 
 
   return (
@@ -190,7 +209,7 @@ const Locations = () => {
                       <span>Swell Direction: {getCardinalDirection(arr[0].swellDirection.noaa)}</span>
 
                       <br />
-                      <span>Wind Speed: {arr[0].windSpeed.noaa} mph</span>
+                      <span>Wind Speed: {Math.round(arr[0].windSpeed.noaa)} mph</span>
                       <br />
                       <span>Wind Direction: {getCardinalDirection(arr[0].windDirection.noaa)}</span>
                     </>
