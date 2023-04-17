@@ -155,8 +155,7 @@ const Locations = () => {
                 <Card.Text>
                   {arr && arr.length > 0 ? (
                     <>
-                      <span>Swell Height: {(arr[0].swellHeight.noaa * 3.28084).toFixed(2)} feet</span>
-
+                       <span>Swell Height: {arr[0].swellHeight.noaa}</span>
                       <br />
                       <span>Swell Period: {arr[0].swellPeriod.noaa}</span>
                       <br />
@@ -164,7 +163,7 @@ const Locations = () => {
                       <br />
                       <span>Wind Speed: {arr[0].windSpeed.noaa}</span>
                       <br />
-                      <span>Wind Direction: {arr[0].windDirection}</span>
+                      <span>Wind Direction: {arr[0].windDirection.noaa}</span>
                     </>
                   ) : (
                     "No current conditions available."
