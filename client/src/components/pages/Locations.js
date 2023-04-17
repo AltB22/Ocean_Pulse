@@ -3,6 +3,34 @@ import { Card, Row, Col, Dropdown } from 'react-bootstrap';
 import { useQuery } from "@apollo/client";
 import { GET_LOCATIONS } from "../../utils/queries";
 
+function getCardinalDirection(degrees) {
+  const degreeRanges = [
+      { direction: "N", range: [0, 11.25] },
+      { direction: "NNE", range: [11.25, 33.75] },
+      { direction: "NE", range: [33.75, 56.25] },
+      { direction: "ENE", range: [56.25, 78.75] },
+      { direction: "E", range: [78.75, 101.25] },
+      { direction: "ESE", range: [101.25, 123.75] },
+      { direction: "SE", range: [123.75, 146.25] },
+      { direction: "SSE", range: [146.25, 168.75] },
+      { direction: "S", range: [168.75, 191.25] },
+      { direction: "SSW", range: [191.25, 213.75] },
+      { direction: "SW", range: [213.75, 236.25] },
+      { direction: "WSW", range: [236.25, 258.75] },
+      { direction: "W", range: [258.75, 281.25] },
+      { direction: "WNW", range: [281.25, 303.75] },
+      { direction: "NW", range: [303.75, 326.25] },
+      { direction: "NNW", range: [326.25, 348.75] },
+      { direction: "N", range: [348.75, 360] },
+  ];
+
+  for (let i = 0; i < degreeRanges.length; i++) {
+      if (degrees >= degreeRanges[i].range[0] && degrees < degreeRanges[i].range[1]) {
+          return degreeRanges[i].direction;
+      }
+  }
+  return "N"; // default direction if degrees is not within any of the defined ranges
+}
 
 const styles = {
 
@@ -22,7 +50,7 @@ const Locations = () => {
 
   const locationData = data?.locations || [];
   const [selectedSpot, setSelectedSpot] = useState('');
-  const [currentConditions, setCurrentConditions] = useState(null);
+  // const [currentConditions, setCurrentConditions] = useState(null);
   const [arr, setArr] = useState([])
   // const [defaultConst, defaultCase] = useState(null)
 
@@ -155,15 +183,16 @@ const Locations = () => {
                 <Card.Text>
                   {arr && arr.length > 0 ? (
                     <>
-                       <span>Swell Height: {arr[0].swellHeight.noaa}</span>
+                      <span>Swell Height: {Math.round(arr[0].swellHeight.noaa * 3.28084)} ft.</span>
                       <br />
-                      <span>Swell Period: {arr[0].swellPeriod.noaa}</span>
+                      <span>Swell Period: {Math.round(arr[0].swellPeriod.noaa)} seconds</span>
                       <br />
-                      <span>Swell Direction: {arr[0].swellDirection.noaa}</span>
+                      <span>Swell Direction: {getCardinalDirection(arr[0].swellDirection.noaa)}</span>
+
                       <br />
-                      <span>Wind Speed: {arr[0].windSpeed.noaa}</span>
+                      <span>Wind Speed: {arr[0].windSpeed.noaa} mph</span>
                       <br />
-                      <span>Wind Direction: {arr[0].windDirection.noaa}</span>
+                      <span>Wind Direction: {getCardinalDirection(arr[0].windDirection.noaa)}</span>
                     </>
                   ) : (
                     "No current conditions available."
