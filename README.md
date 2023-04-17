@@ -16,7 +16,7 @@
 ## Description
 
 This project was the creation of a full stack website that utilizes specific technologies to render a workable and polished website that responds to a real world problem with a intuitive solution. <br>
-The Website functionality allows a user to view API data on surfing locations thought the Bay Area and California. The website utilized express.js and Node.js to render the Routes functionality of the pages. It also utilizes sequelize and MYSQL to render the API created API information. Finally, the website utilized Bootstrap 5.3 and Handlebars to render the front end of the website. A user API as well as a surf locations API were created to allow the the use of databases through router.get and router.put aspects.
+The Website functionality allows a user to view several API's data on surfing locations thought the Bay Area and California. The website utilized MongoDb and GraphQL on the back end to create a in-house database. The program utilizes Mutations and Queries as well as Resolvers and TypeDefs to organize and connect the data from back end to front end. The front end is created using REACT and is run through the Apollo server  A user API as well as a surf locations API were created to allow the the use of databases through router.get and router.put aspects.
 
 ## Usage
 
@@ -76,22 +76,27 @@ No testing was utilized for this project
 #### Front End
 
 -Bootstrap 5.3<br>
--Handlebars<br>
+-React<br>
+-React<br>
 
 #### Back End
 
 -Node.js<br>
 -Express.js<br>
 -Sequelize<br>
--MySQL<br>
+-GraphQL<br>
+-MongoDB<br>
+-Apollo Server<br>
 
 #### code creation
 
 -Heroku<br>
 -Insomnia<br>
 -VS Code<br>
+-MongoDB Compass
 
-### GitHub Link: <https://github.com/Vinni99/The-Ocean-Pulse.git>
+### GitHub Link: <https://github.com/AltB22/Ocean_Pulse>
+### Heroku Link: <https://young-temple-90764.herokuapp.com/#home>
 
 ## License
 
