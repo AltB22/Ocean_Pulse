@@ -21,71 +21,92 @@ const Locations = () => {
   const { loading, data } = useQuery(GET_LOCATIONS);
 
   const locationData = data?.locations || [];
-  const [selectedSpot, setSelectedSpot] = useState(null);
-  const [currentConditions, setCurrentConditions] = useState([]);
+  const [selectedSpot, setSelectedSpot] = useState('');
+  const [currentConditions, setCurrentConditions] = useState(null);
+  const [arr, setArr] = useState([])
   // const [defaultConst, defaultCase] = useState(null)
 
-  useEffect(() => {
-    const GetCurrentConditions = async (selectedSpot) => {
-      switch (selectedSpot?.surf_spot) {
-        case 'Ocean Beach':
-          let lat = 37.75545
-          let lng = -122.5292
-          const surfReport = await GetSurfReport(selectedSpot.surf_spot, lat, lng);
 
-          setCurrentConditions(surfReport);
-          break;
-        default:
-          setCurrentConditions("No conditions available");
-      }
-    };
+  // useEffect(() => {
+  //   const GetCurrentConditions = async (selectedSpot) => {
+  //     switch (selectedSpot?.surf_spot) {
+  //       case '':
+  //         let lat = 0
+  //         let lng = 0
+  //         const currentReport = await GetSurfReport(selectedSpot.surf_spot, lat, lng);
 
-    GetCurrentConditions(selectedSpot);
-  }, [selectedSpot]);
+  //         setCurrentConditions(currentReport);
+  //         break;
+  //       default:
+  //         setCurrentConditions("No conditions available");
+  //     }
+  //   };
 
-  const handleDropdownSelect = async (eventKey, spot) => {
-    const selectedSpot = locationData[eventKey];
-    setSelectedSpot(selectedSpot);
-    const surfReport = await GetSurfReport(selectedSpot.surf_spot, selectedSpot.lat, selectedSpot.lng);
-    setCurrentConditions(surfReport);
-    
+  //   GetCurrentConditions(selectedSpot);
+  // }, [selectedSpot]);
+
+  const handleDropdownSelect = async (e) => {
+    const filteredLocationData = locationData.filter((location) => location.surf_spot === e)
+    console.log(filteredLocationData[0])
+    // const selectedSpot = locationData[eventKey];
+    setSelectedSpot(filteredLocationData[0]);
+
+
   }
+
+
   useEffect(() => {
-    // console.log(currentConditions);
-  }, [currentConditions]);
-
-  async function GetSurfReport(selectedSpot, lat, lng) {//function that accepts the 3 parameters from above and fetches data based on their values (lat & lng are the functionals here) plus other defined vars params & source
-    // if (selectedSpot === "Ocean Beach") {
-    //   // lat = 37.75545
-    //   // lng = -122.5292
-    // }
-    // if (!lat || !lng) {
-    //   console.error("Lat and lng must be defined to fetch surf report.");
-    //   return;
-    // }
-    // let params = "swellHeight,swellPeriod,swellDirection,windSpeed,windDirection";
-    // let source = "noaa
-    const response = await fetch(
-      `https://api.stormglass.io/v2/weather/point?lat=37.75545&lng=-122.5292&params=swellHeight,swellPeriod,swellDirection,windSpeed,windDirection&source=noaa`,
-
+    let lat = 0;
+    let lon = 0;
+    if (selectedSpot === "Ocean Beach") {
+      lat = 37.75545
+      lon = -122.5292
+    }
+    let params = "swellHeight,swellPeriod,swellDirection,windSpeed,windDirection";
+    let source = "noaa";
+    // GetSurfReport(selectedSpot.surf_spot, selectedSpot.lat, selectedSpot.lng);
+    fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lon}&params=${params}&source=${source}`,
       {
         headers: {
           Authorization:
             "5c5365e4-a940-11ed-a138-0242ac130002-5c53665c-a940-11ed-a138-0242ac130002",//API key
         },
-      }
-    );
+      }).then((response) => {
+        return response.json()
+      }).then((data) => {
+        console.log(data.hours[0].swellHeight.noaa)
+       setArr(data.hours)
+      })
 
-    const surfReport = await response.json();//defining api response as json object
-    const surfReportArr = [surfReport.hours] || []
-    console.log(surfReportArr)
-    //  const surfReportArr = [surfReport]
+  }, [selectedSpot]);
 
-    return surfReportArr;
 
-  }
+  // async function GetSurfReport(selectedSpot, lat, lng) {//function that accepts the 3 parameters from above and fetches data based on their values (lat & lng are the functionals here) plus other defined vars params & source
+  //   if (!lat || !lng) {
+  //     console.error("Lat and lng must be defined to fetch surf report.");
+  //     return;
+  //   }
+  //   const response = await fetch(
+  //     `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}&source=${source}`,
 
-  // console.log(surfReportArr)
+  //     {
+  //       headers: {
+  //         Authorization:
+  //           "5c5365e4-a940-11ed-a138-0242ac130002-5c53665c-a940-11ed-a138-0242ac130002",//API key
+  //       },
+  //     }
+  //   );
+
+  //   const surfReport = await response.json();//defining api response as json object
+  //   console.log(arr)
+  //   await setArr(surfReport.hours)
+  //   //  const surfReportArr = [surfReport]
+
+  //   // return surfReportArr;
+
+  // }
+
+  console.log(arr)
   // // currentSurfSpot = surfSpot; // Assign the value of surfSpot to currentSurfSpot
   // // setCurrentConditions(surfReport);//passes data to renderSurfForecast
   // return surfReportArr;
@@ -103,9 +124,9 @@ const Locations = () => {
           Search Locations
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          {locationData.map((spot, i) => (
-            <Dropdown.Item href="#/action-1" key={i} eventKey={i}>
-              {spot?.surf_spot}
+          {locationData?.map((spot, i) => (
+            <Dropdown.Item eventKey={spot.surf_spot} key={i} >
+              {spot.surf_spot}
             </Dropdown.Item>
           ))}
         </Dropdown.Menu>
@@ -132,25 +153,26 @@ const Locations = () => {
               <Card.Body>
                 <Card.Title>Current Conditions for {[selectedSpot.surf_spot]}</Card.Title>
                 <Card.Text>
-                  {currentConditions !== null ? (
+                  {arr && arr.length > 0 ? (
                     <>
-                      <span>Swell Height: {currentConditions[0].swellHeight}</span>
+                      <span>Swell Height: {(arr[0].swellHeight.noaa * 3.28084).toFixed(2)} feet</span>
+
                       <br />
-                      <span>Swell Period: {currentConditions[0].swellPeriod}</span>
+                      <span>Swell Period: {arr[0].swellPeriod.noaa}</span>
                       <br />
-                      <span>Swell Direction: {currentConditions[0].swellDirection}</span>
+                      <span>Swell Direction: {arr[0].swellDirection.noaa}</span>
                       <br />
-                      <span>Wind Speed: {currentConditions[0].windSpeed}</span>
+                      <span>Wind Speed: {arr[0].windSpeed.noaa}</span>
                       <br />
-                      <span>Wind Direction: {currentConditions[0].windDirection}</span>
+                      <span>Wind Direction: {arr[0].windDirection}</span>
                     </>
                   ) : (
                     "No current conditions available."
                   )}
                 </Card.Text>
-
-
               </Card.Body>
+
+
             </Card>
           </Col>
         </Row>
