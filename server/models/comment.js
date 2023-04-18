@@ -1,15 +1,17 @@
-const { Schema, model } = require("mongoose");
+//Used for future development
 
-// Schema for what makes up a comment
-const commentSchema = new Schema({
-    comment: {
-	type: String,
-	// username: User,
-    //must reference the user.
-    },
-});
+// const { Schema, model } = require("mongoose");
 
-// Initialize the Comment model
-const Comment = model("comment", commentSchema);
+// // Schema for what makes up a comment
+// const commentSchema = new Schema({
+//     comment: {
+// 	type: String,
+// 	// username: User,
+//     //must reference the user.
+//     },
+// });
 
-module.exports = Comment;
+// // Initialize the Comment model
+// const Comment = model("comment", commentSchema);
+
+// module.exports = Comment;

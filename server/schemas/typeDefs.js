@@ -2,6 +2,8 @@ const { gql } = require("apollo-server-express");
 
 //Defining the typeDefs in GraphQL schema
 //Below I made some modifications to the fields to match up with the model field ie surfSpot is now surf_spot etc..and changed some Int or Numbers to Strings because I had made those kinds of changes to models to fit our data set.
+
+//type Comment used for future Development
 const typeDefs = gql`
 	type User {
 		_id: ID
@@ -58,6 +60,7 @@ const typeDefs = gql`
 			optimal_wind: String!
 			optimal_swell_size: String!
 			optimal_tide: String!
+			summary: String
 		): Auth
 	}
 `;

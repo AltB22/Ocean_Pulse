@@ -4,7 +4,7 @@ const { signToken } = require("../utils/auth");
 
 //defines the resolvers
 const resolvers = {
-	//query is like get routes, handles retreival of data from the server.  It is itself an object that contains multiple resolvers for retreiving data.
+	//query is like get routes, handles retrieval of data from the server.  It is itself an object that contains multiple resolvers for retreiving data.
 	Query: {
 		user: async () => {
 			return User.find();
@@ -29,8 +29,8 @@ const resolvers = {
 		locations: async (parent, args, context) => {
 			// if (context.user) {
 			return Location.find();
-		// }
-		// throw new AuthenticationError("You need to be logged in!");
+			// }
+			// throw new AuthenticationError("You need to be logged in!");
 		},
 	},
 
@@ -55,21 +55,22 @@ const resolvers = {
 			const token = signToken(user);
 			return { token, user };
 		},
-		addComment: async (parent, { locationId, comment }, context) => {
-			if (context.user) {
-				return Location.findOneAndUpdate(
-					{ _id: locationId },
-					{
-						$addToSet: { comments: { comment, user: context.user._id } },
-					},
-					{
-						new: true,
-						runValidators: true,
-					}
-				);
-			}
-			throw new AuthenticationError("You need to be logged in!");
-		},
+		//for future Development
+		// addComment: async (parent, { locationId, comment }, context) => {
+		// 	if (context.user) {
+		// 		return Location.findOneAndUpdate(
+		// 			{ _id: locationId },
+		// 			{
+		// 				$addToSet: { comments: { comment, user: context.user._id } },
+		// 			},
+		// 			{
+		// 				new: true,
+		// 				runValidators: true,
+		// 			}
+		// 		);
+		// 	}
+		// 	throw new AuthenticationError("You need to be logged in!");
+		// },
 		addLocation: async (parent, args, context) => {
 			if (context.user) {
 				const location = await Location.create({
@@ -80,23 +81,23 @@ const resolvers = {
 			}
 			throw new AuthenticationError("You need to be logged in!");
 		},
-
-		removeUser: async (parent, args, context) => {
-			if (context.user) {
-				return User.findOneAndDelete({ _id: context.user._id }); //we may need to adjust this to context.userId - Billy
-			}
-			throw new AuthenticationError("You need to be logged in!");
-		},
-		removeComment: async (parent, { locationId, comment }, context) => {
-			if (context.user) {
-				return Location.findOneAndUpdate(
-					{ _id: locationId }, //we may need to adjust this to context.locationId - Billy this may work now -Bax
-					{ $pull: { comments: { _id: comment } } },
-					{ new: true }
-				);
-			}
-			throw new AuthenticationError("You need to be logged in!");
-		},
+		//for future Development
+		// removeUser: async (parent, args, context) => {
+		// 	if (context.user) {
+		// 		return User.findOneAndDelete({ _id: context.user._id }); //we may need to adjust this to context.userId - Billy
+		// 	}
+		// 	throw new AuthenticationError("You need to be logged in!");
+		// },
+		// removeComment: async (parent, { locationId, comment }, context) => {
+		// 	if (context.user) {
+		// 		return Location.findOneAndUpdate(
+		// 			{ _id: locationId }, //we may need to adjust this to context.locationId - Billy this may work now -Bax
+		// 			{ $pull: { comments: { _id: comment } } },
+		// 			{ new: true }
+		// 		);
+		// 	}
+		// 	throw new AuthenticationError("You need to be logged in!");
+		// },
 	},
 };
 
