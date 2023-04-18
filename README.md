@@ -45,7 +45,7 @@ Instillation is not required if the user is visiting the website through the Her
 <br> <https://young-temple-90764.herokuapp.com/#home> <br/>
 A user would first need to initialize the package.json file by entering <b>npm instal</b> in the terminal. This will add the required modules for the functionality of the website.<br>
 Next the user would need to enter the provided seeds into the databases. This is done by entering <b>npm run seed</b> in the terminal. This will fill the created databases with the seeded information and allow for the user to log in and see provided surf locations.<br>
-Finally, the user will enter <b> npm run develop<b> to view the program on their local server.
+Finally, the user will enter <b> npm run develop</b> to view the program on their local server.
 
 ## Usage
 
@@ -59,7 +59,7 @@ No testing was utilized for this project
 
 ## Mockup
 
-![Alt text](./public/css/assets/Screen%20Shot%202023-02-19%20at%204.08.58%20PM.png)
+![Alt text](./client/src/components/images/homeimage1.png)
 
 ## Credits
 
