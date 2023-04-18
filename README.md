@@ -41,11 +41,11 @@ THEN I will be logged out and will no longer be able to see the locations page.<
 
 ## Installation
 
+Instillation is not required if the user is visiting the website through the Heroku Server.
+<br> <https://young-temple-90764.herokuapp.com/#home> <br/>
 A user would first need to initialize the package.json file by entering <b>npm instal</b> in the terminal. This will add the required modules for the functionality of the website.<br>
-
-A user would first need to initiate the SQL aspects of the page though the terminal. The user should simply log into their MySQL through <b>MySQL -uroot -p</b> and enter their information. Once logged in, the user should initiate the SQL by entering <b>SOURCE ./db/schema.sql</b>. <br>
-
-Next the user would need to enter the provided seeds into the databases. This is done by entering <b>npm run seed</b> in the terminal. This will fill the created databases with the seeded information and allow for the user to log in and see provided surf locations.
+Next the user would need to enter the provided seeds into the databases. This is done by entering <b>npm run seed</b> in the terminal. This will fill the created databases with the seeded information and allow for the user to log in and see provided surf locations.<br>
+Finally, the user will enter <b> npm run develop<b> to view the program on their local server.
 
 ## Usage
 
