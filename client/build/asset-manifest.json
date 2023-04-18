@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b604adfc.css",
-    "main.js": "/static/js/main.2823e2a2.js",
+    "main.css": "/static/css/main.5e135ccd.css",
+    "main.js": "/static/js/main.48d6abe0.js",
     "static/js/787.2985ac6a.chunk.js": "/static/js/787.2985ac6a.chunk.js",
     "static/media/image.card3.jpg": "/static/media/image.card3.d9322ff1bcc0d8f906e5.jpg",
     "static/media/image.card2.jpeg": "/static/media/image.card2.f1e6e6a0f95310bf8537.jpeg",
@@ -9,15 +9,20 @@
     "static/media/image1.jpeg": "/static/media/image1.449c189939d1e928edc0.jpeg",
     "static/media/image3.jpeg": "/static/media/image3.11a95df04c45bdbd0b08.jpeg",
     "static/media/image.card4.jpeg": "/static/media/image.card4.8929d6ad62445a6b758d.jpeg",
+    "static/media/Surf_safety.png": "/static/media/Surf_safety.33b85fe1b3ac6866de31.png",
+    "static/media/James Contact Pic.jpg": "/static/media/James Contact Pic.155a5fe72c1694286224.jpg",
     "static/media/image4.jpg": "/static/media/image4.daa57077edda2ebb2e76.jpg",
     "static/media/image.card1.webp": "/static/media/image.card1.1ae46b82b4594bbeb345.webp",
+    "static/media/Billys Contact Pic.jpg": "/static/media/Billys Contact Pic.722db8c7d80d1cf9cdca.jpg",
+    "static/media/Vinni Contact Pic.jpeg": "/static/media/Vinni Contact Pic.80bc01be40eda70d5bf0.jpeg",
+    "static/media/Beaus Contact Pic.jpg": "/static/media/Beaus Contact Pic.28dd01c8bc1fd4251ede.jpg",
     "index.html": "/index.html",
-    "main.b604adfc.css.map": "/static/css/main.b604adfc.css.map",
-    "main.2823e2a2.js.map": "/static/js/main.2823e2a2.js.map",
+    "main.5e135ccd.css.map": "/static/css/main.5e135ccd.css.map",
+    "main.48d6abe0.js.map": "/static/js/main.48d6abe0.js.map",
     "787.2985ac6a.chunk.js.map": "/static/js/787.2985ac6a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b604adfc.css",
-    "static/js/main.2823e2a2.js"
+    "static/css/main.5e135ccd.css",
+    "static/js/main.48d6abe0.js"
   ]
 }
