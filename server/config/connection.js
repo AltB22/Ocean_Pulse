@@ -1,9 +1,6 @@
 const mongoose = require("mongoose");
 // require('dotenv').config({ path: __dirname+"/../../.env" });//comment in when seeding data
 
-
-
-
 mongoose.connect(
 	process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/ocean_pulse",
 
