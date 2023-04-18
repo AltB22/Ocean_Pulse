@@ -15,8 +15,7 @@
 
 ## Description
 
-This project was the creation of a full stack website that utilizes specific technologies to render a workable and polished website that responds to a real world problem with a intuitive solution. <br>
-The Website functionality allows a user to view several API's data on surfing locations thought the Bay Area and California. The website utilized MongoDb and GraphQL on the back end to create a in-house database. The program utilizes Mutations and Queries as well as Resolvers and TypeDefs to organize and connect the data from back end to front end. The front end is created using REACT and is run through the Apollo server  A user API as well as a surf locations API were created to allow the the use of databases through router.get and router.put aspects.
+This project was the creation of a full stack website that utilizes specific technologies to render a workable and polished website that responds to a real world problem with a intuitive solution. The Website functionality allows a user to view several API's data on surfing locations thought the Bay Area and California. The website utilized MongoDb and GraphQL on the back end to create a in-house database. The program utilizes Mutations and Queries as well as Resolvers and TypeDefs to organize and connect the data from back end to front end. The front end is created using REACT and is run through the Apollo server The user created APIs as well as the Stormglass API both rendered for the user interface.
 
 ## Usage
 
