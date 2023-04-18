@@ -118,9 +118,9 @@ const Home = () => {
           <h1>Surfing Safety</h1>
           <p> - Surfing is a great way to get exercise and enjoy the outdoors. But it can also be dangerous. If you're a beginner, you should learn how to surf safely. If you're an experienced surfer, you should still be careful. Here are some tips to help you stay safe while surfing.</p>
         </div>
-        <iframe title="This is a unique title" width="420" height="315"
+        {/* <iframe title="This is a unique title" width="420" height="315"
           src="https://www.youtube.com/embed/PBmijBB57Go">
-        </iframe>
+        </iframe> */}
         <Container className="SafetyImage">
           <Row xs={1} md={2} className="g-4">
             <Card.Img variant="down" src={Safety} height="275px" width="100%" />
