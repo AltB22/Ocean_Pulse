@@ -100,7 +100,7 @@ const Home = () => {
             <Card>
               <Card.Img variant="top" src={Image5} height="275px" width="100%" />
               <Card.Body>
-                <Card.Title>Card title</Card.Title>
+                <Card.Title>Card title..</Card.Title>
                 <Card.Text>
                   This is a longer card with supporting text below as a natural
                   lead-in to additional content. This content is a little bit
