@@ -1,8 +1,14 @@
+
+
 import React, { useState, useEffect } from "react";
 import { Card, Row, Col, Dropdown } from 'react-bootstrap';
 import { useQuery } from "@apollo/client";
 import { GET_LOCATIONS } from "../../utils/queries";
+import { REACT_APP_STORMGLASS_API_KEY } from "./apiKey";
 
+
+
+//This function defines ranges of the numerical points of the compass and converts them to the 16 cardinal directions for use in the wind and swell directions as returned by the stormglass api.  For example, I didn't want the user to get back Wind Direction: 288...I wanted that to say NW instead -Billy
 function getCardinalDirection(degrees) {
   const degreeRanges = [
     { direction: "N", range: [0, 11.25] },
@@ -31,7 +37,7 @@ function getCardinalDirection(degrees) {
   }
   return "N"; // default direction if degrees is not within any of the defined ranges
 }
-
+//defines styling for the component.
 const styles = {
 
   heading: {
@@ -41,7 +47,7 @@ const styles = {
     padding: '10px',
     textAlign: 'center',
     margin: 30,
-    backgroundColor: " #2f7bff"
+    backgroundColor: " #2f7bff",
   },
 };
 
@@ -50,7 +56,7 @@ const Locations = () => {
 
   const locationData = data?.locations || [];
   const [selectedSpot, setSelectedSpot] = useState('');
-  const [arr, setArr] = useState([])
+  let [arr, setArr] = useState([])
 
   const handleDropdownSelect = async (e) => {
     const filteredLocationData = locationData.filter((location) => location.surf_spot === e)
@@ -63,85 +69,87 @@ const Locations = () => {
     let lat = 0;
     let lon = 0;
     if (selectedSpot === "Ocean Beach") {
-      lat = 37.75545
-      lon = -122.5292
+
+      lat = 37.73063042319432
+      lon = -122.63783724680127
     }
     if (selectedSpot === "Mavericks") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 37.509978556665104
+      lon = -122.5534502689891
     }
     if (selectedSpot === "Malibu") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 33.9699
+      lon = -118.7648
     }
     if (selectedSpot === "The Wedge") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 33.574190670682526
+      lon = -117.90399224601771
     }
     if (selectedSpot === "Pismo Beach Pier") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 35.124497578676426
+      lon = -120.79827316994256
     }
     if (selectedSpot === "Rincon") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 34.30113404685083
+      lon = -119.80710697995346
     }
     if (selectedSpot === "Huntington Beach Pier") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 33.55514116601666
+      lon = -118.08233709280819
     }
     if (selectedSpot === "San Onofre Beach") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 33.35128285053784
+      lon = -117.60410957753254
     }
     if (selectedSpot === "Asilomar Beach") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 36.61988600976913
+      lon = -121.94843463491648
     }
     if (selectedSpot === "Cardiff Reef") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 33.00960624984056
+      lon = -117.28992972995269
     }
     if (selectedSpot === "Oceanside Pier") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 33.19076840433912
+      lon = -117.39056770233421
     }
     if (selectedSpot === "Doheny Beach") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 33.44492676305343
+      lon = -117.70867232115556
     }
     if (selectedSpot === "Lower Trestles") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 33.38325335472108
+      lon = -117.6075561464269
     }
     if (selectedSpot === "Blacks Beach") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 32.892573073666696
+      lon = -117.28268378738454
     }
     if (selectedSpot === "Windandsea Beach") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 32.8303
+      lon = -117.2984
     }
     if (selectedSpot === "Swamis") {
-      lat = 37.75545
-      lon = -122.5292
+      lat =  33.033085394982464
+      lon = -117.30427078032395
     }
     if (selectedSpot === "Steamer Lane") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 36.92156952230218
+      lon = -121.9791057821476
     }
     if (selectedSpot === "Pleasure Point") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 36.92156952230218
+      lon = -121.9791057821476
     }
     if (selectedSpot === "Ventura Point") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 34.265489186445244
+      lon =  -119.34219155558733
     }
     if (selectedSpot === "Pacifica / Linda Mar Beach") {
-      lat = 37.75545
-      lon = -122.5292
+      lat = 37.6053466863336
+      lon = -122.51270129302262
     }
+    // const REACT_APP_STORMGLASS_API = REACT_APP_STORMGLASS_API_KEY
     
     let params = "swellHeight,swellPeriod,swellDirection,windSpeed,windDirection";
     let source = "noaa";
@@ -149,8 +157,10 @@ const Locations = () => {
     fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lon}&params=${params}&source=${source}`,
       {
         headers: {
-          Authorization:
-            "5c5365e4-a940-11ed-a138-0242ac130002-5c53665c-a940-11ed-a138-0242ac130002",//API key
+          Authorization://This needs to be hidden.  We've tried multiple ways but haven't figured out. process.env.REACT_APP_STORMGLASS_API isn't working neither is referencing the const from apiKey.js
+          "5c5365e4-a940-11ed-a138-0242ac130002-5c53665c-a940-11ed-a138-0242ac130002"
+          // REACT_APP_STORMGLASS_API
+           ,//API key
         },
       }).then((response) => {
         return response.json()
@@ -161,7 +171,7 @@ const Locations = () => {
 
   }, [selectedSpot]);
 
-  // console.log(arr)
+  console.log(arr)
 
 
   return (
